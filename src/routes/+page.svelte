@@ -101,6 +101,10 @@
 			duration: 500,
 			ease: 'none'
 		});
+
+
+		gsap.set('.solusi', { autoAlpha: 0 });
+		gsap.set('.client', { autoAlpha: 0 });
 	});
 </script>
 
