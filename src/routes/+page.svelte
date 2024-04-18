@@ -129,11 +129,11 @@
 	</div> -->
 
 	<div class="header fixed z-50">
-		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-6 pr-6">
-			<div class="w-60 pt-6">
-				<img src="logo.svg" alt="golo" />
+		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
+			<div class="pt-10">
+				<img width="48px" src="logo.svg" alt="golo" />
 			</div>
-			<div class="pt-8">
+			<div class="pt-12">
 				<img width="36px" class="float-right" src="burger.svg" alt="golo" />
 			</div>
 		</div>
@@ -215,11 +215,11 @@
 		</div>
 		<div class="z-0 flex h-screen fixed">
 			<div class="mask1">
-				<img src="bg.jpg" alt="Your" class="w-screen object-fill" />
-				<!-- <video class="object-cover h-screen" id="showreel" loop  autoplay muted>
+				<!-- <img src="bg.jpg" alt="Your" class="w-screen object-fill" /> -->
+				<video class="object-cover w-screen" id="showreel" loop  autoplay muted>
 					<source src="intro.mp4" type="video/mp4" />
 					Your browser does not support the video tag.
-				</video> -->
+				</video>
 			</div>
 		</div>
 	</div>
