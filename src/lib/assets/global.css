@@ -68,8 +68,8 @@ html {
   } */
 
   .mask1 {
-	-webkit-mask-image: url(./mask.svg);
-	mask-image: url(./mask.svg);
+	-webkit-mask-image: url(.../mask.svg);
+	mask-image: url(.../mask.svg);
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
 	/* -webkit-mask-size: auto; */
