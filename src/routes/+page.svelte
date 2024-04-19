@@ -206,66 +206,66 @@
 			</div> -->
 			<div class="flex whitespace-nowrap font-extrabold pt-1">
 				<div class="who-marquee-reverse who inline-block text-black">
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
 				</div>
 			</div>
 			<div class="flex whitespace-nowrap font-extrabold pt-1">
 				<div class="who-marquee who inline-block text-black">
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
 				</div>
 			</div>
 			<div class="flex whitespace-nowrap font-extrabold pt-1">
 				<div class="who-marquee-reverse who inline-block text-black">
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
 				</div>
 			</div>
 			<div class="flex whitespace-nowrap font-extrabold pt-1">
 				<div class="who-marquee who inline-block text-black">
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
-					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="/pattern.svg" alt="golo" />
 				</div>
 			</div>
 		</div>
