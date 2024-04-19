@@ -66,19 +66,18 @@ html {
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
   } */
-
-  .mask1 {
-	-webkit-mask-image: url('/mask.svg');
-	mask-image: url('/mask.svg');
+.mask {
+	-webkit-mask-image: url('/mask_sampah.svg');
+	mask-image: url('/mask_sampah.svg');
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
 	/* -webkit-mask-size: auto; */
-	mask-size: 30vh;
+	mask-size: 50vh;
 	mask-position: center;
 }
 
 .who {
-	line-height: 60%;
-	font-size: 500px;
-	opacity: 0.03;
+	/* line-height: 60%;
+	font-size: 500px; */
+	/* opacity: 0.03; */
 }

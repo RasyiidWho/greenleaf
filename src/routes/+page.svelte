@@ -19,7 +19,7 @@
 		// SECTION 1
 		const sec1_tl = gsap.timeline();
 
-		sec1_tl.to('.mask1', {
+		sec1_tl.to('.mask', {
 			// autoAlpha: 1,
 			maskSize: '1000vh',
 			// alpha: 0,
@@ -53,7 +53,6 @@
 			}
 		});
 
-
 		sec1_tl.to('.client', {
 			autoAlpha: 0.9,
 			// alpha: 0,
@@ -76,7 +75,6 @@
 			}
 		});
 
-
 		// sec1_tl PINNER + MAX DURATION SETTER
 		sec1_tl.to('.section-1', {
 			// autoAlpha: 1,
@@ -91,20 +89,20 @@
 		gsap.from('.who-marquee', {
 			repeat: -1,
 			xPercent: -50,
-			duration: 500,
+			duration: 50,
 			ease: 'none'
 		});
 
 		gsap.to('.who-marquee-reverse', {
 			repeat: -1,
 			xPercent: -50,
-			duration: 500,
+			duration: 50,
 			ease: 'none'
 		});
 
-
 		gsap.set('.solusi', { autoAlpha: 0 });
 		gsap.set('.client', { autoAlpha: 0 });
+		gsap.set('.mambu', { y: 190 });
 	});
 </script>
 
@@ -133,20 +131,38 @@
 			<div class="pt-10">
 				<img width="48px" src="logo.svg" alt="golo" />
 			</div>
-			<div class="pt-12">
+			<div class="pt-10">
 				<img width="36px" class="float-right" src="burger.svg" alt="golo" />
 			</div>
 		</div>
 	</div>
 
 	<div class="spacer section-1 flex items-center justify-center">
+		<div class="fixed z-0 flex h-screen">
+			<div
+				class="sampah absolute left-1/2 top-[49%] z-10 -translate-x-1/2 -translate-y-1/2 transform"
+			>
+				<p class="text-7xl font-bold text-white">sampah</p>
+			</div>
+			<div class="mask z-0">
+				<video class="w-screen object-cover" id="showreel" loop autoplay muted>
+					<source src="intro.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			<div
+				class="sampah absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform pt-72 text-center"
+			>
+				<p class="text-7xl font-bold text-black">merupakan asset jika anda mengolahnya.</p>
+			</div>
+		</div>
 		<!-- <div class="absolute pt-0 solusix opacity-100 z-50 flex flex-col items-center justify-center text-center">
 			<p class="text-7xl leading-none font-normal text-white font-futura">Menghadirkan solusi</p>
 			<p class="text-[300px] leading-none font-extrabold text-white font-futura">ONE-STOP</p>
 			<p class="text-5xl font-light text-white font-futura mx-80">Our intuitive interface makes it easy to navigate and find what you need.</p>
 		</div> -->
 		<div class="absolute">
-			<div class="whitespace-nowrap font-extrabold">
+			<!-- <div class="whitespace-nowrap font-extrabold">
 				<div class="who-marquee inline-block who text-black opacity-5">
 					<span>PILAH BERKAH</span>
 					<span>PILAH BERKAH</span>
@@ -187,41 +203,99 @@
 					<span>PILAH BERKAH</span>
 					<span>PILAH BERKAH</span>
 				</div>
+			</div> -->
+			<div class="flex whitespace-nowrap font-extrabold pt-1">
+				<div class="who-marquee-reverse who inline-block text-black">
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+				</div>
 			</div>
-			<div class="whitespace-nowrap font-extrabold">
-				<div class="who-marquee-reverse inline-block who text-black opacity-5">
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
-					<span>PILAH BERKAH</span>
+			<div class="flex whitespace-nowrap font-extrabold pt-1">
+				<div class="who-marquee who inline-block text-black">
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+				</div>
+			</div>
+			<div class="flex whitespace-nowrap font-extrabold pt-1">
+				<div class="who-marquee-reverse who inline-block text-black">
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+				</div>
+			</div>
+			<div class="flex whitespace-nowrap font-extrabold pt-1">
+				<div class="who-marquee who inline-block text-black">
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
+					<img class="inline" width="360px" src="pattern.svg" alt="golo" />
 				</div>
 			</div>
 		</div>
-		<div class="absolute pt-0 solusi opacity-0 z-50 flex flex-col items-center justify-center text-center">
-			<p class="text-7xl leading-none font-normal text-white font-futura">Menghadirkan solusi</p>
-			<p class="text-[300px] leading-none font-extrabold text-white font-futura">ONE-STOP</p>
-			<p class="text-5xl font-light text-white font-futura mx-80">Our intuitive interface makes it easy to navigate and find what you need.</p>
+		<div
+			class="solusi absolute z-50 flex flex-col items-center justify-center pt-0 text-center opacity-0"
+		>
+			<p class="font-futura text-7xl font-normal leading-none text-white">Menghadirkan solusi</p>
+			<p class="font-futura text-[300px] font-extrabold leading-none text-white">ONE-STOP</p>
+			<p class="font-futura mx-80 text-5xl font-light text-white">
+				Our intuitive interface makes it easy to navigate and find what you need.
+			</p>
 		</div>
-		<div class="absolute pt-0 client opacity-0 z-50 flex flex-col items-center justify-center text-center">
-			<p class="text-7xl leading-none font-normal text-white font-futura">Client</p>
-			<p class="text-[300px] leading-none font-extrabold text-white font-futura">Sopowae</p>
-			<p class="text-5xl font-light text-white font-futura mx-80">Our intuitive interface makes it easy to navigate and find what you need.</p>
+		<div
+			class="client absolute z-50 flex flex-col items-center justify-center pt-0 text-center opacity-0"
+		>
+			<p class="font-futura text-7xl font-normal leading-none text-white">Client</p>
+			<p class="font-futura text-[300px] font-extrabold leading-none text-white">Sopowae</p>
+			<p class="font-futura mx-80 text-5xl font-light text-white">
+				Our intuitive interface makes it easy to navigate and find what you need.
+			</p>
 		</div>
-		<div class="z-0 flex h-screen fixed">
-			<div class="mask1">
-				<!-- <img src="bg.jpg" alt="Your" class="w-screen object-fill" /> -->
-				<video class="object-cover w-screen" id="showreel" loop  autoplay muted>
-					<source src="intro.mp4" type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
-			</div>
-		</div>
+
+		<!-- <div class="relative inline-block pt-10">
+			<button class="cursor-default relative w-[1960px] h-[60px] z-10 bg-transparent border-2 border-white text-white font-bold py-2 px-4 rounded-full overflow-hidden">
+			  <div class="absolute top-0 left-0 w-full h-full">
+				<video class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full" src="intro.mp4" autoplay muted loop></video>
+			  </div>
+			  <span class="relative z-20">HOLA</span>
+			</button>
+		  </div> -->
 	</div>
 	<div class="spacer section-2">b</div>
 </div>
