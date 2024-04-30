@@ -19,6 +19,7 @@
 
 html {
     scrollbar-width: none;
+	cursor: none;
 }
 
 html {
@@ -72,7 +73,7 @@ html {
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
 	/* -webkit-mask-size: auto; */
-	mask-size: 50vh;
+	mask-size: 40vh;
 	mask-position: center;
 }
 
@@ -81,3 +82,62 @@ html {
 	font-size: 500px; */
 	/* opacity: 0.03; */
 }
+
+.dpkCursor {
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 5rem;
+    color: #fff;
+    display: flex;
+    height: 2.75rem;
+    justify-content: center;
+    left: 0;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transition: width 0.25s cubic-bezier(0.51, 1.07, 1, 1),
+      height 0.25s cubic-bezier(0.51, 1.07, 1, 1),
+      background-color 0.1s cubic-bezier(0.51, 1.07, 1, 1);
+    width: 2.75rem;
+    z-index: 999;
+  }
+  .dpkCursor.hover-active {
+    font-size: 0.875rem;
+    height: 4rem;
+    width: 4rem;
+  }
+  .dpkCursor.hover-bg {
+    border-width: 0;
+    mix-blend-mode: normal;
+  }
+  .dpkCursor.noCursor {
+    border-width: 0;
+  }
+  .dpkCursor.emogy {
+    border-color: #d3d3d3;
+    font-size: 2rem;
+    height: 4rem;
+    mix-blend-mode: normal;
+    width: 4rem;
+  }
+  .dpkCursor.mixBlend {
+    background: #fff;
+    height: 4rem;
+    mix-blend-mode: difference;
+    width: 4rem;
+  }
+  .dpkCursor.hover-img {
+    background-size: cover;
+    border: none;
+    border-radius: 0;
+    height: 10rem;
+    mix-blend-mode: normal;
+    width: 10rem;
+  }
+  .dpkCursor.star {
+    font-size: 5rem;
+    height: 10rem;
+    width: 10rem;
+  }
+  
