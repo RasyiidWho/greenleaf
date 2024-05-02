@@ -54,8 +54,8 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '0%',
-				end: '150%'
+				start: '50%',
+				end: '60%'
 			}
 		});
 
