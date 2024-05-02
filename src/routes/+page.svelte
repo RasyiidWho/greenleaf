@@ -111,7 +111,6 @@
 				end: '150%',
 				scrub: false,
 				markers: false,
-				toggleActions: 'play reset reset reset',
 				onEnter() {
 					sec1_tl.to(splitIntro.chars, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.01 });
 				},
