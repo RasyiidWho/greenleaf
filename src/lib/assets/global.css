@@ -19,7 +19,7 @@
 
 html {
 	scrollbar-width: none;
-	/* cursor: none; */
+	cursor: default;
 	/* overflow-x: hidden; */
 	font-kerning: none;
 }
