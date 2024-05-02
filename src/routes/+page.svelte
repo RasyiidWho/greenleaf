@@ -55,7 +55,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				start: '0%',
-				end: '200%'
+				end: '150%'
 			}
 		});
 
