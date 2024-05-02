@@ -573,6 +573,28 @@
 		<!-- <Layanan>
 			<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern"/>
 		</Layanan> -->
+		<Layananleft>
+			<!-- <p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
+			<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> -->
+			<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PENGUPILAN</p>
+			<img class="inline w-96" src="/daurulang.png" alt="" slot="layanan-img"/>
+			<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
+				Our intuitive interface makes it easy to navigate and find what you need ur intuitive
+				interface makes it easy.
+			</p>
+			<img class="inline w-56" src="/daurulang_pt.svg" alt="golo" slot="layanan-pattern"/>
+		</Layananleft>
+		<Layananright>
+			<!-- <p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
+			<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> -->
+			<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PEMACULAN</p>
+			<img class="inline w-96" src="/pelatihan.png" alt="" slot="layanan-img"/>
+			<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
+				Our intuitive interface makes it easy to navigate and find what you need ur intuitive
+				interface makes it easy.
+			</p>
+			<img class="inline w-56" src="/pengelolaan_pt.svg" alt="golo" slot="layanan-pattern"/>
+		</Layananright>
 	</div>
 	<div class="spacer section-3">
 		<!-- <Layananleft>
