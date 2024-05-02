@@ -54,8 +54,20 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '50%',
-				end: '60%'
+				start: '40%',
+				end: '50%'
+			}
+		});
+
+		sec1_tl.to('.intro-title', {
+			autoAlpha: 0,
+			scale: 2,
+			// alpha: 0,
+			scrollTrigger: {
+				trigger: '.section-1',
+				scrub: true,
+				start: '0%',
+				end: '30%'
 			}
 		});
 
@@ -78,7 +90,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				start: '0%',
-				end: '300%'
+				end: '250%'
 			}
 		});
 
@@ -158,7 +170,7 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				start: '250%',
-				end: '350%',
+				end: '300%',
 				scrub: false,
 				markers: false,
 				onEnter() {
@@ -190,25 +202,13 @@
 			}
 		});
 
-		sec1_tl.to('.intro-title', {
-			autoAlpha: 0,
-			scale: 2,
-			// alpha: 0,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '0%',
-				end: '30%'
-			}
-		});
-
 		sec1_tl.to('.header2', {
 			opacity: 1,
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '350%'
+				start: '300%'
 			}
 		});
 
@@ -218,7 +218,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '350%',
+				start: '300%',
 				end: '450%'
 			}
 		});
@@ -229,7 +229,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '350%',
+				start: '300%',
 				end: '450%'
 			}
 		});
@@ -240,7 +240,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '350%',
+				start: '300%',
 				end: '450%'
 			}
 		});
@@ -251,7 +251,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '350%',
+				start: '300%',
 				end: '450%'
 			}
 		});
@@ -261,7 +261,7 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '350%',
+				start: '300%',
 				end: '450%'
 			}
 		});
@@ -272,7 +272,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '350%'
+				start: '300%'
 			}
 		});
 
@@ -320,7 +320,7 @@
 				trigger: '.section-2',
 				pin: false,
 				markers: false,
-				end: '350%'
+				end: '300%'
 			}
 		});
 
