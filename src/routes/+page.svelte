@@ -107,7 +107,7 @@
 				trigger: '.section-1',
 				start: '50%',
 				end: '150%',
-				scrub: true,
+				scrub: false,
 				markers: false,
 				toggleActions: 'play reset reset reset',
 				onEnter() {
@@ -198,6 +198,16 @@
 				scrub: true,
 				start: '0%',
 				end: '30%'
+			}
+		});
+
+		sec1_tl.to('.header2', {
+			opacity: 1,
+			scrollTrigger: {
+				trigger: '.section-1',
+				scrub: true,
+				markers: false,
+				start: '350%',
 			}
 		});
 
@@ -395,7 +405,7 @@
 		</div>
 	</div>
 
-	<div class="header2 fixed -z-10" style="filter: invert(88%) sepia(34%) saturate(793%) hue-rotate(31deg) brightness(77%) contrast(84%);">
+	<div class="header2 fixed -z-10 opacity-0" style="filter: invert(88%) sepia(34%) saturate(793%) hue-rotate(31deg) brightness(77%) contrast(84%);">
 		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
 			<div class="pt-10">
 				<img width="48px" src="logo.svg" alt="golo" />
