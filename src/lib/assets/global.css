@@ -14,16 +14,32 @@
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
-    display: none;
+	/* display: none; */
 }
 
 html {
-    scrollbar-width: none;
+	scrollbar-width: none;
 	/* cursor: none; */
+	/* overflow-x: hidden; */
+	font-kerning: none;
 }
 
 html {
-    -ms-overflow-style: none;
+	/* -ms-overflow-style: none; */
+	--svrollbar-thumb-background: #F8F8F8;
+	--svrollbar-thumb-opacity: 0.2;
+	/* --svrollbar-thumb-width: 10px; */
+}
+
+.v-scrollbar {
+	z-index: 10000;
+	mix-blend-mode: difference;
+}
+
+.v-thumb {
+}
+
+.v-track {
 }
 
 /* If you want to enable text selection for specific elements, you can override the style */
@@ -49,15 +65,21 @@ html {
 	/* position: relative; */
 }
 
+.header2 {
+	height: 10vh;
+	width: 100vw;
+	overflow: hidden;
+	/* position: relative; */
+}
+
 #eye_left,
 #eye_right {
 	transition:
 		cx 0.5s,
-		cy 0.5s; 
-		
+		cy 0.5s;
 }
 
-.font-futura {
+.font-jost {
 	font-family: 'Jost';
 }
 
@@ -83,61 +105,78 @@ html {
 	/* opacity: 0.03; */
 }
 
+.showreel::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(4, 42, 19, 0.4); /* Change the color and opacity as needed */
+}
+
+.showreel {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 .dpkCursor {
-    align-items: center;
-    border: 2px solid #fff;
-    border-radius: 5rem;
-    color: #fff;
-    display: flex;
-    height: 2.75rem;
-    justify-content: center;
-    left: 0;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    transition: width 0.25s cubic-bezier(0.51, 1.07, 1, 1),
-      height 0.25s cubic-bezier(0.51, 1.07, 1, 1),
-      background-color 0.1s cubic-bezier(0.51, 1.07, 1, 1);
-    width: 2.75rem;
-    z-index: 999;
-  }
-  .dpkCursor.hover-active {
-    font-size: 0.875rem;
-    height: 4rem;
-    width: 4rem;
-  }
-  .dpkCursor.hover-bg {
-    border-width: 0;
-    mix-blend-mode: normal;
-  }
-  .dpkCursor.noCursor {
-    border-width: 0;
-  }
-  .dpkCursor.emogy {
-    border-color: #d3d3d3;
-    font-size: 2rem;
-    height: 4rem;
-    mix-blend-mode: normal;
-    width: 4rem;
-  }
-  .dpkCursor.mixBlend {
-    background: #fff;
-    height: 4rem;
-    mix-blend-mode: difference;
-    width: 4rem;
-  }
-  .dpkCursor.hover-img {
-    background-size: cover;
-    border: none;
-    border-radius: 0;
-    height: 10rem;
-    mix-blend-mode: normal;
-    width: 10rem;
-  }
-  .dpkCursor.star {
-    font-size: 5rem;
-    height: 10rem;
-    width: 10rem;
-  }
-  
+	align-items: center;
+	border: 2px solid #fff;
+	border-radius: 5rem;
+	color: #fff;
+	display: flex;
+	height: 2.75rem;
+	justify-content: center;
+	left: 0;
+	mix-blend-mode: difference;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	transition:
+		width 0.25s cubic-bezier(0.51, 1.07, 1, 1),
+		height 0.25s cubic-bezier(0.51, 1.07, 1, 1),
+		background-color 0.1s cubic-bezier(0.51, 1.07, 1, 1);
+	width: 2.75rem;
+	z-index: 999;
+}
+.dpkCursor.hover-active {
+	font-size: 0.875rem;
+	height: 4rem;
+	width: 4rem;
+}
+.dpkCursor.hover-bg {
+	border-width: 0;
+	mix-blend-mode: normal;
+}
+.dpkCursor.noCursor {
+	border-width: 0;
+}
+.dpkCursor.emogy {
+	border-color: #d3d3d3;
+	font-size: 2rem;
+	height: 4rem;
+	mix-blend-mode: normal;
+	width: 4rem;
+}
+.dpkCursor.mixBlend {
+	background: #fff;
+	height: 4rem;
+	mix-blend-mode: difference;
+	width: 4rem;
+}
+.dpkCursor.hover-img {
+	background-size: cover;
+	border: none;
+	border-radius: 0;
+	height: 10rem;
+	mix-blend-mode: normal;
+	width: 10rem;
+}
+.dpkCursor.star {
+	font-size: 5rem;
+	height: 10rem;
+	width: 10rem;
+}

@@ -1,6 +1,12 @@
 <script>
 	import '../app.pcss';
 	import '$lib/assets/global.css';
+	
 </script>
 
-<slot />
+<!-- <ScrollArea class="h-auto rounded-md border">
+
+</ScrollArea> -->
+
+	<slot />
+
