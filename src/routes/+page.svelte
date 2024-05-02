@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Layananright from '$lib/layananright.svelte';
 	import Layananleft from '$lib/layananleft.svelte';
+	import dpkCursor from '$lib/dpkCursor.ts';
 	import Layanan from '$lib/layanan.svelte';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
@@ -26,7 +27,8 @@
 		// 	border: 'none', // Agrega un borde al cursor. Por defecto es none
 		// 	autoAlpha: '100%' // Cambia la opacidad del cursor. Por defecto es 100%%
 		// });
-		// const cursor = await import('$lib/cursor');
+		// const dpkCursor = await import('dpk_cursor/dpkCursor.min.js');
+		// import { dpkCursor } from 'dpk_cursor/dpkCursor.min.js';
 		const customCursor = new dpkCursor({ ease: 0.11 });
 		let splitIntro = new SplitType('.introx');
 		let splitSolusi = new SplitType('.solusix');
@@ -207,7 +209,7 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '350%',
+				start: '350%'
 			}
 		});
 
@@ -297,8 +299,6 @@
 		// 		end: '380%'
 		// 	}
 		// });
-
-
 
 		// sec1_tl PINNER + MAX DURATION SETTER
 		sec1_tl.to('.section-1', {
