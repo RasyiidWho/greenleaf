@@ -44,7 +44,7 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '0%',
+				start: '10%',
 				end: '200%'
 			}
 		});
@@ -66,7 +66,7 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '0%',
+				start: '10%',
 				end: '30%'
 			}
 		});
@@ -416,11 +416,12 @@
 	</div>
 
 	<div class="spacer section-1 flex items-center justify-center">
-		<div class="z-50 h-screen">
-			<div class="sampah absolute left-1/2 top-[50%] z-10 -translate-x-1/2 -translate-y-1/2">
-				<p class="intro-title text-7xl font-bold tracking-tight text-white">sampah</p>
-			</div>
-			<div class="mask showreel">
+		<div class="z-50 w-screen h-screen flex items-center justify-center text-center">
+			<div class="mask showreel flex items-center justify-center text-center">
+				<p class="intro-title font-jost text-center text-7xl pb-2 tracking-tight font-bold absolute text-white z-10">sampah</p>
+				<!-- <div class="sampah absolute z-10"> -->
+					<!-- <p class="intro-title text-7xl font-bold tracking-tight text-orange-400 z-10">sampah</p> -->
+				<!-- </div> -->
 				<video class="w-screen object-cover" id="showreel" loop autoplay muted>
 					<source src="intro.mp4" type="video/mp4" />
 				</video>
