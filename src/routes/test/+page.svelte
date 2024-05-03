@@ -1,24 +1,80 @@
-<script lang="ts">
-    import type { PageData } from './$types';
-    
-    export let data: PageData;
+<script>
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	onMount(() => {
+		//   const circleMask = document.querySelector('.circle-mask');
+		//   const video = document.querySelector('.video-container');
+
+		const tl = gsap.timeline();
+
+
+
+		// tl.to('.video-container', {
+        //     clipPath: "inset(0% 0% 0% 0%)",
+		// 	scrollTrigger: {
+		// 		trigger: '.section',
+		// 		start: '0%',
+		// 		end: '100%',
+		// 		scrub: true,
+        //         markers: true
+		// 	},
+		// });
+
+        tl.fromTo('.video-container', {
+            clipPath: "inset(45% 40% 45% 40% round 100px)",
+			scrollTrigger: {
+				trigger: '.section',
+				start: '0%',
+				end: '100%',
+				scrub: true,
+                markers: true
+			},
+		},
+        {
+            clipPath: "inset(0% 0% 0% 0% round 0px)",
+			scrollTrigger: {
+				trigger: '.section',
+				start: '0%',
+				end: '100%',
+				scrub: true,
+                markers: true
+			},
+		});
+
+		tl.to('.section', {
+			// autoAlpha: 1,
+			scrollTrigger: {
+				trigger: '.section',
+				pin: true,
+				markers: false,
+				end: '300%'
+			}
+		});
+
+        tl.set('.video-container', {
+            clipPath: "inset(45% 40% 45% 40% round 100px)",
+		});
+	});
 </script>
 
-<div class="spacer section-1 flex">
-    <div class="z-50 w-screen h-screen flex items-center justify-center text-center">
-        <div class="mask showreel flex items-center justify-center text-center">
-            <p class="font-jost text-center text-7xl pb-2 tracking-tight font-bold absolute text-white z-10">sampah</p>
-            <!-- <div class="sampah absolute z-10"> -->
-                <!-- <p class="intro-title text-7xl font-bold tracking-tight text-orange-400 z-10">sampah</p> -->
-            <!-- </div> -->
-            <video class="w-screen object-cover" id="showreel" loop autoplay muted>
-                <source src="intro.mp4" type="video/mp4" />
-            </video>
-        </div>
-        <div class="sampah absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 pt-64 text-center">
-            <p class="intro-desc text-7xl font-bold tracking-tight text-black">
-                akan menjadi <span style="color: #71A324;" class="underline">asset</span> jika diolah dengan benar.
-            </p>
-        </div>
-    </div>
+<div class="spacer section relative overflow-hidden">
+	<!-- <div class="circle-mask absolute bottom-0 left-0 right-0 top-0 z-10 m-auto h-24 w-24 rounded-full" style="transform: scale(1);"></div> -->
+	<div class="video-container absolute left-0 top-0 h-full w-full">
+		<!-- Video element -->
+		<video class="absolute h-full w-full object-cover" autoplay loop muted>
+			<source src="intro.mp4" type="video/mp4" />
+			Your browser does not support the video tag.
+		</video>
+	</div>
 </div>
+
+<style>
+	/* .video-container {
+		clip-path: circle(12rem at center);
+        clip-path: inset(45% 40% 45% 40% round 100px);
+	} */
+</style>

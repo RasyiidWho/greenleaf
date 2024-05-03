@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@lostisworld/tailwind-mask": "^1.0.1",
 		"@types/gsap": "^3.0.0",
 		"bits-ui": "^0.21.7",
 		"clsx": "^2.1.0",

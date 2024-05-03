@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Ox from "./../../static/ox.svg";
 	import Layananright from '$lib/layananright.svelte';
 	import Layananleft from '$lib/layananleft.svelte';
 	import dpkCursor from '$lib/dpkCursor.ts';
@@ -38,13 +39,12 @@
 		const sec1_tl = gsap.timeline();
 
 		sec1_tl.to('.mask', {
-			// autoAlpha: 1,
-			maskSize: '1000vh',
+			maskSize: '500%',
 			// alpha: 0,
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '10%',
+				start: '0%',
 				end: '200%'
 			}
 		});
@@ -61,7 +61,7 @@
 
 		sec1_tl.to('.intro-title', {
 			autoAlpha: 0,
-			scale: 2,
+			scale: 3,
 			// alpha: 0,
 			scrollTrigger: {
 				trigger: '.section-1',
@@ -347,6 +347,11 @@
 		// gsap.set('.solusix', { autoAlpha: 0 });
 
 		gsap.set(splitClient.lines, { autoAlpha: 0 });
+
+
+		// gsap.set('.mask', {
+		// 	maskSize: '30vh'
+		// });
 		// gsap.set('.clientx', { autoAlpha: 0 });
 
 		// gsap.set('.client', { autoAlpha: 0 });
@@ -371,7 +376,7 @@
 	});
 </script>
 
-<Svrollbar />
+
 
 <div class="font-jost">
 	<!-- <div class="absolute float-right right-0 z-50 pt-5 pr-5">
@@ -416,15 +421,20 @@
 	</div>
 
 	<div class="spacer section-1 flex items-center justify-center">
-		<div class="z-50 w-screen h-screen flex items-center justify-center text-center">
-			<div class="mask showreel flex items-center justify-center text-center">
+		<div class="z-50 w-full h-full flex items-center justify-center text-center">
+			<div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover">
+				<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
+				<video class="w-full h-full object-cover" id="showreel" loop autoplay muted>
+					<source src="introx.mp4" type="video/mp4" />
+				</video>
 				<p class="intro-title text-center text-7xl pb-2 tracking-tight font-bold absolute text-white z-10">sampah</p>
 				<!-- <div class="sampah absolute z-10"> -->
 					<!-- <p class="intro-title text-7xl font-bold tracking-tight text-orange-400 z-10">sampah</p> -->
 				<!-- </div> -->
-				<video class="w-screen object-cover" id="showreel" loop autoplay muted>
+				
+				<!-- <video class="absolute h-full w-full object-cover" autoplay loop muted>
 					<source src="intro.mp4" type="video/mp4" />
-				</video>
+				</video> -->
 			</div>
 			<div class="sampah absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 pt-64 text-center">
 				<p class="intro-desc text-4xl sm:text-xl md:text-2xl lg:text-xl xl:text-7xl font-bold tracking-tight text-black">
@@ -505,7 +515,7 @@
 		</div>
 		<div class="showreel-overlay client absolute z-50 flex flex-col items-center justify-center pt-0 text-center opacity-0">
 			<p class="clientx font-jost text-7xl font-normal leading-none text-white">Lebih dari</p>
-			<p class="clientx font-jost text-[350px] font-extrabold leading-none text-white">500+</p>
+			<p class="clientx font-jost text-[350px] font-extrabold leading-none text-white">5000+</p>
 			<p class="clientx font-jost mx-80 text-5xl font-light text-white">Client mempercayakan sampah mereka kepada kami</p>
 			<div class="clientx flex whitespace-nowrap pt-10 font-extrabold">
 				<div class="who-marquee who inline-block text-black">

@@ -89,16 +89,12 @@ html {
 	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
   } */
-.mask {
-	-webkit-mask-image: url('/o.svg');
+/* .mask {
 	mask-image: url('/o.svg');
-	-webkit-mask-repeat: no-repeat;
 	mask-repeat: no-repeat;
-	-webkit-mask-size: auto;
-	mask-size: auto;
-	/* mask-size: 35vh; */
+	mask-size: 17vh;
 	mask-position: center;
-}
+} */
 
 .who {
 	/* line-height: 60%;
@@ -113,13 +109,13 @@ html {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(4, 42, 19, 0.4);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .showreel {
 	/* display: block; */
-	max-width: 100%;
-	height: auto;
+	/* max-width: 100%;
+	height: auto; */
 }
 
 .dpkCursor {
