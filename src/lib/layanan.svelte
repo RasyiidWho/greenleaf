@@ -16,6 +16,7 @@
         </div>
     </div> -->
     <div>
+        <div class="vignette"></div>
         <div class="absolute w-screen h-screen overflow-hidden -z-50">
             <div class="intro-batikx flex whitespace-nowrap pt-2 font-extrabold">
                 <div class="who-marquee who inline-block">

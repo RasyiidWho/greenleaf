@@ -66,7 +66,7 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '10%',
+				start: '0%',
 				end: '30%'
 			}
 		});
@@ -409,7 +409,7 @@
 		</div>
 	</div>
 
-	<div class="header2 fixed -z-10 opacity-0" style="filter: invert(88%) sepia(34%) saturate(793%) hue-rotate(31deg) brightness(77%) contrast(84%);">
+	<div class="header2 fixed z-30 opacity-0" style="filter: invert(88%) sepia(34%) saturate(793%) hue-rotate(31deg) brightness(77%) contrast(84%);">
 		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
 			<div class="pt-10">
 				<img width="48px" src="logo.svg" alt="golo" />
@@ -421,11 +421,11 @@
 	</div>
 
 	<div class="spacer section-1 flex items-center justify-center">
-		<div class="z-50 w-full h-full flex items-center justify-center text-center">
+		<div class="z-20 w-full h-full flex items-center justify-center text-center">
 			<div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover">
 				<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
 				<video class="w-full h-full object-cover" id="showreel" loop autoplay muted>
-					<source src="introx.mp4" type="video/mp4" />
+					<source src="intro.mp4" type="video/mp4" />
 				</video>
 				<p class="intro-title text-center text-7xl pb-2 tracking-tight font-bold absolute text-white z-10">sampah</p>
 				<!-- <div class="sampah absolute z-10"> -->
