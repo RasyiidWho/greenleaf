@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Ox from "./../../static/ox.svg";
+	import Ox from './../../static/ox.svg';
 	import Layananright from '$lib/layananright.svelte';
 	import Layananleft from '$lib/layananleft.svelte';
 	import dpkCursor from '$lib/dpkCursor.ts';
@@ -16,6 +16,10 @@
 	// import Cursor from 'custom-cursor'
 
 	// export let data: PageData;
+
+	let gridContainer;
+	let section2
+	let gridItem;
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -250,7 +254,7 @@
 		});
 
 		sec1_tl.to('.stats-grid', {
-			y: -800,
+			y: -1000,
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
@@ -306,12 +310,38 @@
 		// SECTION 2
 		const sec2_tl = gsap.timeline();
 
+		// gsap.to('.grid-item', {
+		// 	xPercent: -100 * (items.length - 1),
+		// 	ease: 'none',
+		// 	scrollTrigger: {
+		// 		trigger: '.grid-container',
+		// 		start: 'top top',
+		// 		end: () => `+=${section2.offsetWidth}`,
+		// 		scrub: true,
+		// 		pin: true,
+		// 		invalidateOnRefresh: true
+		// 	}
+		// });
+
+		const items = document.querySelectorAll('.grid-item');
+
+		gsap.to('.grid-item', {
+			xPercent: -100 * (items.length - 1),
+			scrollTrigger: {
+				trigger: '.section-2',
+				start: '0%',
+				end: '300%',
+				scrub: true,
+			}
+		});
+
+
 		// sec2_tl PINNER + MAX DURATION SETTER
 		sec2_tl.to('.section-2', {
 			// autoAlpha: 1,
 			scrollTrigger: {
 				trigger: '.section-2',
-				pin: false,
+				pin: true,
 				markers: false,
 				end: '300%'
 			}
@@ -337,7 +367,6 @@
 		// gsap.set('.introx', { autoAlpha: 0 });
 
 		gsap.set(splitClient.lines, { autoAlpha: 0 });
-
 
 		// gsap.set('.mask', {
 		// 	maskSize: '30vh'
@@ -365,8 +394,6 @@
 		requestAnimationFrame(raf);
 	});
 </script>
-
-
 
 <div class="font-jost">
 	<!-- <div class="absolute float-right right-0 z-50 pt-5 pr-5">
@@ -411,24 +438,24 @@
 	</div>
 
 	<div class="spacer section-1 flex h-max">
-		<div class="z-20 w-full h-full flex">
-			<div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover">
+		<div class="z-20 flex h-full w-full">
+			<div class="mask showreel flex h-full w-full items-center justify-center object-cover text-center mask-size-44 mask-repeat-no-repeat mask-position-center mask-image-[url('/ox.svg')]">
 				<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
-				<video class="w-full h-full object-cover" id="showreel" loop autoplay muted>
+				<video class="h-full w-full object-cover" id="showreel" loop autoplay muted>
 					<source src="intro.mp4" type="video/mp4" />
 				</video>
-				<p class="intro-title text-center text-7xl pb-2 tracking-tight font-bold absolute text-white z-10">sampah</p>
+				<p class="intro-title absolute z-10 pb-2 text-center text-7xl font-bold tracking-tight text-white">sampah</p>
 				<!-- <div class="sampah absolute z-10"> -->
-					<!-- <p class="intro-title text-7xl font-bold tracking-tight text-orange-400 z-10">sampah</p> -->
+				<!-- <p class="intro-title text-7xl font-bold tracking-tight text-orange-400 z-10">sampah</p> -->
 				<!-- </div> -->
-				
+
 				<!-- <video class="absolute h-full w-full object-cover" autoplay loop muted>
 					<source src="intro.mp4" type="video/mp4" />
 				</video> -->
 			</div>
 			<div class="sampah absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 pt-64 text-center">
-				<p class="intro-desc text-4xl sm:text-xl md:text-2xl lg:text-xl xl:text-7xl font-bold tracking-tight text-black">
-					akan menjadi <span style="color: #71A324;" class="underline">asset</span> jika diolah dengan benar.
+				<p class="intro-desc text-4xl font-light tracking-tight text-black sm:text-xl md:text-2xl lg:text-xl xl:text-7xl">
+					akan menjadi <span style="color: #71A324;">asset</span> jika diolah dengan benar.
 				</p>
 			</div>
 		</div>
@@ -498,8 +525,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="flex items-center justify-center text-center z-50 absolute w-full h-full">
-			<div class="showreel-overlay absolute intro z-50 flex flex-col pt-0 opacity-0">
+		<div class="absolute z-50 flex h-full w-full items-center justify-center text-center">
+			<div class="showreel-overlay intro absolute z-50 flex flex-col pt-0 opacity-0">
 				<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
 				<p class="introx font-jost text-[350px] font-extrabold leading-none text-white">SARANA</p>
 				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
@@ -531,34 +558,34 @@
 			<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
 		</div>
 
-		<div class="stats flex flex-col absolute text-center h-full opacity-0">
-			<img class="inline absolute -z-50 opacity-50 w-[64rem] right-0" src="/glow1.svg" alt="golo" />
-			<img class="inline absolute -z-50 w-[64rem]" src="/glow2.svg?v2" alt="golo" />
-			<p class="stats-text font-jost text-[120px] font-normal leading-none text-black pt-36">Statistik pencapaian yang terus bertambah setiap harinya</p>
-			<div class="stats-grid grid grid-cols-2 grid-rows-2 bg-[#eff3dd86] m-48 rounded-3xl items-center justify-center text-center place-items-center">
-				<div class="p-20 pt-32">
+		<div class="stats absolute flex h-full flex-col text-center opacity-0">
+			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
+			<img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" />
+			<p class="stats-text font-jost px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
+			<div class="stats-grid grid-rows-22 m-48 grid grid-cols-2 place-items-center items-center justify-center rounded-3xl bg-[#eff3dd86] text-center">
+				<div class="py-28">
 					<img class="inline w-12" src="/1.svg" alt="golo" />
-					<p class="font-jost font-normal text-[50px] pt-10">5000<span class="text-[#539451]">+</span></p>
-					<p class="font-jost font-light text-[50px] mx-32">Total Client Fasyankes</p>
+					<p class="font-jost pt-10 text-[40px] font-normal">5000<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[40px] font-light">Total Client Fasyankes</p>
 				</div>
 				<div>
 					<img class="inline w-12" src="/2.svg" alt="golo" />
-					<p class="font-jost font-normal text-[50px] pt-10">230<span class="text-[#539451]">+</span></p>
-					<p class="font-jost font-light text-[50px] mx-32">Total Client Non-Fasyankes</p>
+					<p class="font-jost pt-10 text-[40px] font-normal">230<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[40px] font-light">Total Client Non-Fasyankes</p>
 				</div>
-				<div>
+				<div class="py-28">
 					<img class="inline w-12" src="/3.svg" alt="golo" />
-					<p class="font-jost font-normal text-[50px] pt-10">534<span class="text-[#539451]">+</span></p>
-					<p class="font-jost font-light text-[50px] mx-32">Ton Sampah Setiap Hari</p>
+					<p class="font-jost pt-10 text-[40px] font-normal">534<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[40px] font-light">Ton Sampah Setiap Hari</p>
 				</div>
 				<div>
 					<img class="inline w-12" src="/4.svg" alt="golo" />
-					<p class="font-jost font-normal text-[50px] pt-10">34<span class="text-[#539451]">+</span></p>
-					<p class="font-jost font-light text-[50px] mx-32">Melayani Rumah Setiap Hari</p>	
+					<p class="font-jost pt-10 text-[40px] font-normal">34<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[40px] font-light">Melayani Rumah Setiap Hari</p>
 				</div>
 			</div>
-				
-				<!-- <Layanan>
+
+			<!-- <Layanan>
 					<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern" />
 				</Layanan> -->
 			<!-- <Layananleft>
@@ -594,11 +621,19 @@
 			</button>
 		  </div> -->
 	</div>
-	<div class="spacer section-2">
+	<div class="spacer section-2" bind:this={section2}>
+		<p class=" font-jost px-32 pt-36 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p>
+		<div class="grid-container w-full overflow-hidden whitespace-nowrap" bind:this={gridContainer}>
+			{#each Array.from({ length: 10 }) as _, i}
+				<div class="grid-item mr-20 inline-block h-96 w-96 bg-gray-300" bind:this={gridItem}>
+					{i + 1}
+				</div>
+			{/each}
+		</div>
 		<!-- <Layanan>
 			<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern"/>
 		</Layanan> -->
-		<Layananleft>
+		<!-- <Layananleft>
 			<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PENGUPILAN</p>
 			<img class="inline w-96" src="/daurulang.png" alt="" slot="layanan-img"/>
 			<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
@@ -606,8 +641,8 @@
 				interface makes it easy.
 			</p>
 			<img class="inline w-56" src="/daurulang_pt.svg" alt="golo" slot="layanan-pattern"/>
-		</Layananleft>
-		<Layananright>
+		</Layananleft> -->
+		<!-- <Layananright>
 			<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PEMACULAN</p>
 			<img class="inline w-96" src="/pelatihan.png" alt="" slot="layanan-img"/>
 			<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
@@ -615,10 +650,10 @@
 				interface makes it easy.
 			</p>
 			<img class="inline w-56" src="/pengelolaan_pt.svg" alt="golo" slot="layanan-pattern"/>
-		</Layananright>
+		</Layananright> -->
 	</div>
-	<div class="spacer section-3">
-		<!-- <Layananleft>
+	<!-- <div class="spacer section-3">
+		<!== <Layananleft>
 			<!== <p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
 			<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> ==>
 			<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PENGELOLAAN</p>
@@ -628,6 +663,6 @@
 				interface makes it easy.
 			</p>
 			<img class="inline w-56" src="/pengelolaan_pt.svg" alt="golo" slot="layanan-pattern"/>
-		</Layananleft> -->
-	</div>
+		</Layananleft> ==>
+	</div> -->
 </div>
