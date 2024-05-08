@@ -170,13 +170,24 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '250%',
+				start: '150%',
 				end: '260%'
 			}
 		});
 
+		sec1_tl.to('.stats', {
+			autoAlpha: 1,
+			// alpha: 0,
+			scrollTrigger: {
+				trigger: '.section-1',
+				scrub: true,
+				start: '100%',
+				end: '200%'
+			}
+		});
+
 		sec1_tl.to('.header2', {
-			opacity: 1,
+			autoAlpha: 1,
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
@@ -228,6 +239,26 @@
 			}
 		});
 
+		sec1_tl.to('.stats-text', {
+			autoAlpha: 0,
+			scrollTrigger: {
+				trigger: '.section-1',
+				scrub: true,
+				start: '350%',
+				end: '380%'
+			}
+		});
+
+		sec1_tl.to('.stats-grid', {
+			y: -800,
+			scrollTrigger: {
+				trigger: '.section-1',
+				scrub: true,
+				start: '350%',
+				end: '500%'
+			}
+		});
+
 		// sec1_tl.to('.layanan', {
 		// 	autoAlpha: 1,
 		// 	scrollTrigger: {
@@ -268,7 +299,7 @@
 				trigger: '.section-1',
 				pin: true,
 				markers: false,
-				end: '450%'
+				end: '500%'
 			}
 		});
 
@@ -379,8 +410,8 @@
 		</div>
 	</div>
 
-	<div class="spacer section-1 flex items-center justify-center">
-		<div class="z-20 w-full h-full flex items-center justify-center text-center">
+	<div class="spacer section-1 flex h-max">
+		<div class="z-20 w-full h-full flex">
 			<div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover">
 				<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
 				<video class="w-full h-full object-cover" id="showreel" loop autoplay muted>
@@ -467,37 +498,66 @@
 				</div>
 			</div>
 		</div>
-		<div class="showreel-overlay intro absolute z-50 flex flex-col items-center justify-center pt-0 text-center opacity-0">
-			<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
-			<p class="introx font-jost text-[350px] font-extrabold leading-none text-white">SARANA</p>
-			<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
-		</div>
-		<div class="showreel-overlay client absolute z-50 flex flex-col items-center justify-center pt-0 text-center opacity-0">
-			<p class="clientx font-jost text-7xl font-normal leading-none text-white">Lebih dari</p>
-			<p class="clientx font-jost text-[350px] font-extrabold leading-none text-white">5000+</p>
-			<p class="clientx font-jost mx-80 text-5xl font-light text-white">Client mempercayakan sampah mereka kepada kami</p>
-			<div class="clientx flex whitespace-nowrap pt-10 font-extrabold">
-				<div class="who-marquee who inline-block text-black">
-					<img class="inline w-64 p-5" src="/client/visa.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/samsung.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/zoom.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/venmo.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/lenovo.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/visa.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/samsung.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/zoom.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/venmo.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/lenovo.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/visa.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/samsung.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/zoom.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/venmo.png" alt="golo" />
-					<img class="inline w-64 p-5" src="/client/lenovo.png" alt="golo" />
+		<div class="flex items-center justify-center text-center z-50 absolute w-full h-full">
+			<div class="showreel-overlay absolute intro z-50 flex flex-col pt-0 opacity-0">
+				<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
+				<p class="introx font-jost text-[350px] font-extrabold leading-none text-white">SARANA</p>
+				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
+			</div>
+			<div class="showreel-overlay client z-50 flex flex-col pt-0 opacity-0">
+				<p class="clientx font-jost text-7xl font-normal leading-none text-white">Lebih dari</p>
+				<p class="clientx font-jost text-[350px] font-extrabold leading-none text-white">5000+</p>
+				<p class="clientx font-jost mx-80 text-5xl font-light text-white">Client mempercayakan sampah mereka kepada kami</p>
+				<div class="clientx flex whitespace-nowrap pt-10 font-extrabold">
+					<div class="who-marquee who inline-block text-black">
+						<img class="inline w-64 p-5" src="/client/visa.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/samsung.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/zoom.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/venmo.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/lenovo.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/visa.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/samsung.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/zoom.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/venmo.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/lenovo.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/visa.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/samsung.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/zoom.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/venmo.png" alt="golo" />
+						<img class="inline w-64 p-5" src="/client/lenovo.png" alt="golo" />
+					</div>
 				</div>
 			</div>
+			<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
 		</div>
-		<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
-		<div class="layanan absolute -z-50 opacity-0">
+
+		<div class="stats flex flex-col absolute text-center h-full opacity-0">
+			<img class="inline absolute -z-50 opacity-50 w-[64rem] right-0" src="/glow1.svg" alt="golo" />
+			<img class="inline absolute -z-50 w-[64rem]" src="/glow2.svg?v2" alt="golo" />
+			<p class="stats-text font-jost text-[120px] font-normal leading-none text-black pt-36">Statistik pencapaian yang terus bertambah setiap harinya</p>
+			<div class="stats-grid grid grid-cols-2 grid-rows-2 bg-[#eff3dd86] m-48 rounded-3xl items-center justify-center text-center place-items-center">
+				<div class="p-20 pt-32">
+					<img class="inline w-12" src="/1.svg" alt="golo" />
+					<p class="font-jost font-normal text-[50px] pt-10">5000<span class="text-[#539451]">+</span></p>
+					<p class="font-jost font-light text-[50px] mx-32">Total Client Fasyankes</p>
+				</div>
+				<div>
+					<img class="inline w-12" src="/2.svg" alt="golo" />
+					<p class="font-jost font-normal text-[50px] pt-10">230<span class="text-[#539451]">+</span></p>
+					<p class="font-jost font-light text-[50px] mx-32">Total Client Non-Fasyankes</p>
+				</div>
+				<div>
+					<img class="inline w-12" src="/3.svg" alt="golo" />
+					<p class="font-jost font-normal text-[50px] pt-10">534<span class="text-[#539451]">+</span></p>
+					<p class="font-jost font-light text-[50px] mx-32">Ton Sampah Setiap Hari</p>
+				</div>
+				<div>
+					<img class="inline w-12" src="/4.svg" alt="golo" />
+					<p class="font-jost font-normal text-[50px] pt-10">34<span class="text-[#539451]">+</span></p>
+					<p class="font-jost font-light text-[50px] mx-32">Melayani Rumah Setiap Hari</p>	
+				</div>
+			</div>
+				
 				<!-- <Layanan>
 					<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern" />
 				</Layanan> -->
