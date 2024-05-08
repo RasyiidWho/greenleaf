@@ -32,7 +32,6 @@
 		// import { dpkCursor } from 'dpk_cursor/dpkCursor.min.js';
 		const customCursor = new dpkCursor({ ease: 0.11 });
 		let splitIntro = new SplitType('.introx');
-		let splitSolusi = new SplitType('.solusix');
 		let splitClient = new SplitType('.clientx');
 
 		// SECTION 1
@@ -160,34 +159,8 @@
 					// sec1_tl.to(splitSolusi.lines, { y: 24, autoAlpha: 0, duration: 0.5, stagger: 0.2 });
 				},
 				onLeave() {
-					sec1_tl.to(splitClient.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
+					// sec1_tl.to(splitClient.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
 				}
-			}
-		});
-
-		sec1_tl.to('.solusix', {
-			autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				start: '250%',
-				end: '300%',
-				scrub: false,
-				markers: false,
-				onEnter() {
-					// sec1_tl.to(splitSolusi.lines, { autoAlpha: 1 });
-					sec1_tl.to(splitSolusi.chars, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.01 });
-				},
-				onLeaveBack() {
-					sec1_tl.to(splitSolusi.chars, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
-				},
-
-				onEnterBack() {
-					sec1_tl.to(splitSolusi.chars, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.01 });
-					// sec1_tl.to(splitSolusi.lines, { y: 24, autoAlpha: 0, duration: 0.5, stagger: 0.2 });
-				}
-				// onLeave() {
-				// 	sec1_tl.to(splitSolusi.chars, { y: -24, autoAlpha: 0, duration: 0.09, stagger: 0.007 });
-				// }
 			}
 		});
 
@@ -218,19 +191,8 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '300%',
-				end: '450%'
-			}
-		});
-
-		sec1_tl.to('.solusi', {
-			y: -1000,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				markers: false,
-				start: '300%',
-				end: '450%'
+				start: '250%',
+				end: '350%'
 			}
 		});
 
@@ -240,8 +202,8 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '300%',
-				end: '450%'
+				start: '250%',
+				end: '350%'
 			}
 		});
 
@@ -251,8 +213,8 @@
 				trigger: '.section-1',
 				scrub: true,
 				markers: false,
-				start: '300%',
-				end: '450%'
+				start: '250%',
+				end: '350%'
 			}
 		});
 
@@ -261,20 +223,20 @@
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '300%',
-				end: '450%'
+				start: '250%',
+				end: '350%'
 			}
 		});
 
-		sec1_tl.to('.layanan', {
-			autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				markers: false,
-				start: '300%'
-			}
-		});
+		// sec1_tl.to('.layanan', {
+		// 	autoAlpha: 1,
+		// 	scrollTrigger: {
+		// 		trigger: '.section-1',
+		// 		scrub: true,
+		// 		markers: false,
+		// 		start: '300%'
+		// 	}
+		// });
 
 		// sec1_tl.fromTo('.mask', {
 		// 	// autoAlpha: 1,
@@ -342,9 +304,6 @@
 		// gsap.set('.showreel', { filter: 'brightness(40%)' });
 		gsap.set(splitIntro.chars, { autoAlpha: 0 });
 		// gsap.set('.introx', { autoAlpha: 0 });
-
-		gsap.set(splitSolusi.chars, { autoAlpha: 0 });
-		// gsap.set('.solusix', { autoAlpha: 0 });
 
 		gsap.set(splitClient.lines, { autoAlpha: 0 });
 
@@ -537,16 +496,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="showreel-overlay solusi absolute z-50 flex flex-col items-center justify-center pt-0 text-center opacity-0">
-			<p class="solusix font-jost text-7xl font-normal leading-none text-white">Kami memberikan</p>
-			<p class="solusix font-jost text-[350px] font-extrabold leading-none text-white">SOLUSI</p>
-			<p class="solusix font-jost mx-80 text-5xl font-light text-white">Dengan 5 layanan berupa:</p>
-		</div>
 		<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
 		<div class="layanan absolute -z-50 opacity-0">
-			<Layanan>
-				<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern" />
-			</Layanan>
+				<!-- <Layanan>
+					<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern" />
+				</Layanan> -->
 			<!-- <Layananleft>
 				<!== <p class="font-jost absolute z-50 text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
 				<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> ==>
@@ -585,8 +539,6 @@
 			<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern"/>
 		</Layanan> -->
 		<Layananleft>
-			<!-- <p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
-			<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> -->
 			<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PENGUPILAN</p>
 			<img class="inline w-96" src="/daurulang.png" alt="" slot="layanan-img"/>
 			<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
@@ -596,8 +548,6 @@
 			<img class="inline w-56" src="/daurulang_pt.svg" alt="golo" slot="layanan-pattern"/>
 		</Layananleft>
 		<Layananright>
-			<!-- <p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
-			<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> -->
 			<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PEMACULAN</p>
 			<img class="inline w-96" src="/pelatihan.png" alt="" slot="layanan-img"/>
 			<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
