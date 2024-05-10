@@ -5,7 +5,7 @@
 	import dpkCursor from '$lib/dpkCursor';
 	import Layanan from '$lib/layanan.svelte';
 	import { onMount } from 'svelte';
-	// import { Button } from '$lib/components/ui/button/index';
+	import { Button } from '$lib/components/ui/button/index';
 	import type { PageData } from './$types';
 	import * as Menubar from '$lib/components/ui/menubar';
 	import { gsap } from 'gsap';
@@ -535,11 +535,11 @@
 				<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
 				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
 				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
-				<!-- <div class="introx pt-10 z-50">
+				<div class="introx pt-10 z-50">
 					<Button variant="outline" class="mx-1 rounded-full w-56 h-16 text-3xl px-2 dpk-hover" data-hover-bg="#83B948" data-hover-text="↗">Book</Button>
 					<Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Showcase</Button>
-					<!== <Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Hubungi</Button> ==>
-				</div> -->
+					<!-- <Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Hubungi</Button> -->
+				</div>
 			</div>
 			<div class="showreel-overlay client z-40 flex flex-col pt-0 opacity-0">
 				<p class="clientx font-jost text-7xl font-normal leading-none text-white">Lebih dari</p>
