@@ -19,7 +19,7 @@
 
 	let gridContainer;
 	let section2
-	let gridItem;
+	let gridItem = [];
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -325,8 +325,11 @@
 
 		const items = document.querySelectorAll('.grid-item');
 
+		console.log("gridItem.length: " + gridItem.length)
+		console.log("items.length: " + items.length)
+
 		gsap.to('.grid-item', {
-			xPercent: -100 * (items.length - 1),
+			xPercent: -50 * items.length,
 			scrollTrigger: {
 				trigger: '.section-2',
 				start: '0%',
@@ -528,12 +531,12 @@
 		<div class="absolute z-50 flex h-full w-full items-center justify-center text-center">
 			<div class="showreel-overlay intro absolute z-50 flex flex-col pt-0 opacity-0">
 				<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
-				<p class="introx font-jost text-[350px] font-extrabold leading-none text-white">SARANA</p>
+				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
 				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
 			</div>
 			<div class="showreel-overlay client z-50 flex flex-col pt-0 opacity-0">
 				<p class="clientx font-jost text-7xl font-normal leading-none text-white">Lebih dari</p>
-				<p class="clientx font-jost text-[350px] font-extrabold leading-none text-white">5000+</p>
+				<p class="clientx font-jost text-[330px] font-extrabold leading-none text-white">5000+</p>
 				<p class="clientx font-jost mx-80 text-5xl font-light text-white">Client mempercayakan sampah mereka kepada kami</p>
 				<div class="clientx flex whitespace-nowrap pt-10 font-extrabold">
 					<div class="who-marquee who inline-block text-black">
@@ -562,26 +565,26 @@
 			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
 			<img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" />
 			<p class="stats-text font-jost px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
-			<div class="stats-grid grid-rows-22 m-48 grid grid-cols-2 place-items-center items-center justify-center rounded-3xl bg-[#eff3dd86] text-center">
+			<div class="stats-grid grid-rows-2 m-64 grid grid-cols-2 place-items-center items-center justify-center rounded-3xl bg-[#eff3dd86] text-center">
 				<div class="py-28">
 					<img class="inline w-12" src="/1.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[40px] font-normal">5000<span class="text-[#539451]">+</span></p>
-					<p class="font-jost mx-32 text-[40px] font-light">Total Client Fasyankes</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 				<div>
 					<img class="inline w-12" src="/2.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[40px] font-normal">230<span class="text-[#539451]">+</span></p>
-					<p class="font-jost mx-32 text-[40px] font-light">Total Client Non-Fasyankes</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[30px] font-light">Total Client Non-Fasyankes</p>
 				</div>
 				<div class="py-28">
 					<img class="inline w-12" src="/3.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[40px] font-normal">534<span class="text-[#539451]">+</span></p>
-					<p class="font-jost mx-32 text-[40px] font-light">Ton Sampah Setiap Hari</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[30px] font-light">Ton Sampah Setiap Hari</p>
 				</div>
 				<div>
 					<img class="inline w-12" src="/4.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[40px] font-normal">34<span class="text-[#539451]">+</span></p>
-					<p class="font-jost mx-32 text-[40px] font-light">Melayani Rumah Setiap Hari</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#539451]">+</span></p>
+					<p class="font-jost mx-32 text-[30px] font-light">Melayani Rumah Setiap Hari</p>
 				</div>
 			</div>
 
@@ -622,13 +625,21 @@
 		  </div> -->
 	</div>
 	<div class="spacer section-2" bind:this={section2}>
-		<p class=" font-jost px-32 pt-36 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p>
-		<div class="grid-container w-full overflow-hidden whitespace-nowrap" bind:this={gridContainer}>
-			{#each Array.from({ length: 10 }) as _, i}
-				<div class="grid-item mr-20 inline-block h-96 w-96 bg-gray-300" bind:this={gridItem}>
-					{i + 1}
+		<!-- <p class=" font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
+		<div class="">
+			<div class="bg-[#F4F9EF]">
+				<p class=" font-jost px-32 pt-20 text-[80px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p>
+				<div class="grid-container w-full h-full overflow-hidden whitespace-nowrap py-20" bind:this={gridContainer}>
+					{#each Array.from({ length: 5 }) as _, i}
+						<div class="grid-item inline-block" bind:this={gridItem}>
+							<img class="w-56 absolute right-36" src="/pelatihan.svg" alt="golo"/>
+							<div class="p-10 m-4 w-[500px] h-[500px] bg-white rounded-3xl" >
+								{i + 1}
+							</div>
+						</div>
+					{/each}
 				</div>
-			{/each}
+			</div>
 		</div>
 		<!-- <Layanan>
 			<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern"/>
