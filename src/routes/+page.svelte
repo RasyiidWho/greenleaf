@@ -32,8 +32,77 @@
 	onMount(async () => {
 		const app = new Application(canvas);
 		app.load('https://prod.spline.design/zpBu3APUqpMJS1WI/scene.splinecode?v=1').then(() => {
+			// SECTION 2
+			const sec2_tl = gsap.timeline();
 
+			sec2_tl.to('.section-2', {
+				scrollTrigger: {
+					trigger: '.section-2',
+					start: '50%',
+					end: '100%',
+					onEnter() {
+						app.setVariable('1', '1');
+					},
+				}
+			});
 			
+			sec2_tl.to('.section-2', {
+				scrollTrigger: {
+					trigger: '.section-2',
+					start: '100%',
+					end: '150%',
+					onEnter() {
+						app.setVariable('2', '2');
+					},
+				}
+			});
+
+			sec2_tl.to('.section-2', {
+				scrollTrigger: {
+					trigger: '.section-2',
+					start: '150%',
+					end: '200%',
+					onEnter() {
+						app.setVariable('3', '3');
+					},
+				}
+			});
+
+			sec2_tl.to('.section-2', {
+				scrollTrigger: {
+					trigger: '.section-2',
+					start: '200%',
+					end: '250%',
+					onEnter() {
+						app.setVariable('4', '4');
+					},
+				}
+			});
+
+
+			sec2_tl.to('.section-2', {
+				scrollTrigger: {
+					trigger: '.section-2',
+					start: '250%',
+					end: '300%',
+					onEnter() {
+						app.setVariable('5', '5');
+					},
+				}
+			});
+
+
+
+			// sec2_tl PINNER + MAX DURATION SETTER
+			sec2_tl.to('.section-2', {
+				// autoAlpha: 1,
+				scrollTrigger: {
+					trigger: '.section-2',
+					pin: true,
+					markers: false,
+					end: '300%'
+				}
+			});
 		});
 
 		const diumbulkeee = () => {
@@ -328,21 +397,6 @@
 				pin: true,
 				markers: false,
 				end: '500%'
-			}
-		});
-
-		// SECTION 2
-		const sec2_tl = gsap.timeline();
-
-
-		// sec2_tl PINNER + MAX DURATION SETTER
-		sec2_tl.to('.section-2', {
-			// autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-2',
-				pin: true,
-				markers: false,
-				end: '200%',
 			}
 		});
 
