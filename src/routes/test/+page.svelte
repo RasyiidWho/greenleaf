@@ -18,19 +18,19 @@
 			scrollTrigger: {
 				trigger: '.section-2',
 				start: '0%',
-				end: '1800%',
+				end: '10000%',
 				scrub: true,
 				markers: true,
 				onUpdate: (self) => {
-					if (product) {
-						const scrollPos = self.progress;
-						const videoDuration = product.duration;
-						const videoCurrentTime = videoDuration * scrollPos;
-						if (videoCurrentTime) {
-							product.currentTime = videoCurrentTime;
-							console.log(videoCurrentTime, scrollPos);
-						}
-					}
+						// const scrollPos = self.progress;
+						// const videoDuration = product.duration;
+						// const videoCurrentTime = videoDuration * scrollPos;
+						// if (videoCurrentTime) {
+						// 	product.currentTime = videoCurrentTime;
+						// }
+						console.log("self.progress", self.progress * 18)
+						console.log("video.currentTime", product.currentTime)
+						product.currentTime = self.progress * 18;
 				}
 			}
 		});
@@ -42,7 +42,7 @@
 				trigger: '.section-2',
 				pin: true,
 				markers: false,
-				end: '1800%'
+				end: '10000%'
 			}
 		});
 	});
