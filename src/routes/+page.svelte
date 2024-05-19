@@ -21,10 +21,23 @@
 	let gridContainer;
 	let section2;
 	let gridItem = [];
+	let product;
 
 	gsap.registerPlugin(ScrollTrigger);
 
+	let mlebukmetukke;
+
 	onMount(async () => {
+		const diumbulkeee = () => {
+			// alert("ahhhhhhh");
+			gsap.to('.mumbul', { y: 10 });
+		};
+
+		function diumbulkeeee() {
+			// alert("ahhhhhhh");
+			gsap.to('.mumbul', { y: 10 });
+		}
+
 		// UxCursor({
 		// 	size: 30, // Cambio del ancho y alto del cursor. Por defecto está en 25
 		// 	mixBlend: 'exclusion', // filtro mixBlend. Por defecto está en exclusion
@@ -128,14 +141,14 @@
 				scrub: false,
 				markers: false,
 				onEnter() {
-					sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1,  duration: 0.5, stagger: 0.2 });
+					sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
 				},
 				onLeaveBack() {
 					sec1_tl.to(splitIntro.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
 				},
 
 				onEnterBack() {
-					sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1,  duration: 0.5, stagger: 0.2 });
+					sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
 				},
 				onLeave() {
 					sec1_tl.to(splitIntro.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
@@ -264,6 +277,8 @@
 			}
 		});
 
+		mlebukmetukke = gsap.fromTo('.mumbul', { y: 0, paused: true }, { y: -30, paused: true });
+
 		// sec1_tl.to('.layanan', {
 		// 	autoAlpha: 1,
 		// 	scrollTrigger: {
@@ -311,31 +326,33 @@
 		// SECTION 2
 		const sec2_tl = gsap.timeline();
 
-		// gsap.to('.grid-item', {
-		// 	xPercent: -100 * (items.length - 1),
-		// 	ease: 'none',
-		// 	scrollTrigger: {
-		// 		trigger: '.grid-container',
-		// 		start: 'top top',
-		// 		end: () => `+=${section2.offsetWidth}`,
-		// 		scrub: true,
-		// 		pin: true,
-		// 		invalidateOnRefresh: true
-		// 	}
-		// });
 
-		const items = document.querySelectorAll('.grid-item');
+		product.currentTime = 0;
 
-		console.log('gridItem.length: ' + gridItem.length);
-		console.log('items.length: ' + items.length);
-
-		gsap.to('.grid-item', {
-			xPercent: -50 * items.length,
+		sec2_tl.to(product, {
+			// currentTime: product.duration,
 			scrollTrigger: {
 				trigger: '.section-2',
-				start: '20%',
-				end: '200%',
-				scrub: true
+				start: '0%',
+				end: '100%',
+				scrub: false,
+				markers: true,
+				onUpdate:  (self) => {
+					// if (self.progress < 0.4) {
+					// 	product.currentTime = 0;
+					// 	product.play();
+					// } else {
+					// 	// Pause the video otherwise
+					// 	product.pause();
+					// }
+					
+					if(product.currentTime >= 4) {
+						product.pause()
+					} else {
+						product.play()
+					}
+					console.log("product.currentTime: " + product.currentTime)
+				}
 			}
 		});
 
@@ -346,7 +363,7 @@
 				trigger: '.section-2',
 				pin: true,
 				markers: false,
-				end: '200%'
+				end: '200%',
 			}
 		});
 
@@ -426,12 +443,12 @@
 				<img width="48px" src="logo.svg" alt="golo" />
 			</div>
 			<div class="pt-12">
-				<img width="36px" class="float-right dpk-hover" data-hover-bg="#83B948" data-hover-text="Menu" src="burger.svg" alt="golo" />
+				<img width="36px" class="dpk-hover float-right" data-hover-bg="#83B948" data-hover-text="Menu" src="burger.svg" alt="golo" />
 			</div>
 		</div>
 	</div>
 
-	<div class="header2 fixed z-30 opacity-0" style="filter: invert(88%) sepia(34%) saturate(793%) hue-rotate(31deg) brightness(77%) contrast(84%);">
+	<div class="header2 fixed z-30 opacity-0" style="filter: invert(89%) sepia(23%) saturate(295%) hue-rotate(80deg) brightness(90%) contrast(90%);">
 		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
 			<div class="pt-10">
 				<img width="48px" src="logo.svg" alt="golo" />
@@ -449,7 +466,7 @@
 				<video class="h-full w-full object-cover" id="showreel" loop autoplay muted>
 					<source src="intro.mp4" type="video/mp4" />
 				</video>
-				<p class="intro-title font-jost  absolute z-10 pb-2 text-center text-7xl font-bold tracking-tight text-white">sampah</p>
+				<p class="intro-title font-jost absolute z-10 pb-2 text-center text-7xl font-bold tracking-tight text-white">sampah</p>
 				<!-- <div class="sampah absolute z-10"> -->
 				<!-- <p class="intro-title text-7xl font-bold tracking-tight text-orange-400 z-10">sampah</p> -->
 				<!-- </div> -->
@@ -460,7 +477,7 @@
 			</div>
 			<div class="sampah absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 pt-64 text-center">
 				<p class="intro-desc font-jost text-4xl font-semibold tracking-tight text-black sm:text-xl md:text-2xl lg:text-xl xl:text-7xl">
-					akan menjadi <span style="color: #71A324;">asset</span> jika diolah dengan benar.
+					akan menjadi <span style="color: #99D7B3;">asset</span> jika diolah dengan benar.
 				</p>
 			</div>
 		</div>
@@ -535,9 +552,9 @@
 				<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
 				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
 				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
-				<div class="introx pt-10 z-50">
-					<Button variant="outline" class="mx-1 rounded-full w-56 h-16 text-3xl px-2 dpk-hover" data-hover-bg="#83B948" data-hover-text="↗">Book</Button>
-					<Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Showcase</Button>
+				<div class="introx z-50 pt-10">
+					<Button variant="outline" class="dpk-hover mx-1 h-16 w-56 rounded-full px-2 text-3xl" data-hover-bg="#99D7B3" data-hover-text="↗">Book</Button>
+					<Button variant="ghost" class="mx-1 h-16 w-56 rounded-full border-[1px] border-white text-3xl text-white">Showcase</Button>
 					<!-- <Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Hubungi</Button> -->
 				</div>
 			</div>
@@ -545,7 +562,7 @@
 				<p class="clientx font-jost text-7xl font-normal leading-none text-white">Lebih dari</p>
 				<p class="clientx font-jost text-[330px] font-extrabold leading-none text-white">5000+</p>
 				<p class="clientx font-jost mx-80 text-5xl font-light text-white">Client mempercayakan sampah mereka kepada kami</p>
-				<div class="clientx flex whitespace-nowrap pt-10 font-extrabold z-0">
+				<div class="clientx z-0 flex whitespace-nowrap pt-10 font-extrabold">
 					<div class="who-marquee who inline-block text-black">
 						<img class="inline w-64 p-5" src="/client/visa.png" alt="golo" />
 						<img class="inline w-64 p-5" src="/client/samsung.png" alt="golo" />
@@ -572,25 +589,25 @@
 			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
 			<!-- <img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" /> -->
 			<p class="stats-text font-jost px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
-			<div class="stats-grid m-64 grid grid-cols-2 grid-rows-2 place-items-center items-center justify-center rounded-3xl bg-[#eff3dd86] text-center">
+			<div class="stats-grid m-64 grid grid-cols-2 grid-rows-2 place-items-center items-center justify-center rounded-3xl bg-[#abd5b637] text-center">
 				<div class="py-28">
 					<img class="inline w-12" src="/1.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#539451]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#99D7B3]">+</span></p>
 					<p class="font-jost mx-32 text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 				<div>
 					<img class="inline w-12" src="/2.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#539451]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#99D7B3]">+</span></p>
 					<p class="font-jost mx-32 text-[30px] font-light">Total Client Non-Fasyankes</p>
 				</div>
 				<div class="py-28">
 					<img class="inline w-12" src="/3.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#539451]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#99D7B3]">+</span></p>
 					<p class="font-jost mx-32 text-[30px] font-light">Ton Sampah Setiap Hari</p>
 				</div>
 				<div>
 					<img class="inline w-12" src="/4.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#539451]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#99D7B3]">+</span></p>
 					<p class="font-jost mx-32 text-[30px] font-light">Melayani Rumah Setiap Hari</p>
 				</div>
 			</div>
@@ -632,54 +649,60 @@
 		  </div> -->
 	</div>
 	<div class="spacer section-2" bind:this={section2}>
+		<div class="flex h-full w-full items-center justify-center object-cover text-center">
+			<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
+			<video class="product h-full w-full object-cover" bind:this={product} controls>
+				<source src="product.mp4" type="video/mp4" />
+			</video>
+		</div>
 		<!-- <p class=" font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
-		<div>
-			<div class="vignette-top z-10"></div>
-			<div class="h-screen w-screen bg-[#F4F9EF]">
+		<!-- <div>
+			<!== <div class="vignette-top z-10"></div> ==>
+			<div class="z-50 h-screen w-screen bg-[#F4F9EF]">
 				<img class="absolute right-0 z-0 h-screen" src="/bg.png" alt="emak" />
 				<p class=" font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Dengan <span class="text-[#83B948]"> 5 layanan unggulan</span> dari kami untuk njenengan</p>
-				<div class="grid-container h-full w-full overflow-hidden whitespace-nowrap py-20" bind:this={gridContainer}>
-					<!-- {#each Array.from({ length: 5 }) as _, i}
+				<div class="grid-container z-50 h-full w-full overflow-hidden whitespace-nowrap py-20" bind:this={gridContainer}>
+					<!== {#each Array.from({ length: 5 }) as _, i}
 						<div class="grid-item inline-block" bind:this={gridItem}>
 							<img class="w-56 absolute right-36" src="/pelatihan.svg" alt="golo"/>
 							<div class="p-10 m-4 w-[500px] h-[500px] bg-white rounded-3xl" >
 								{i + 1}
 							</div>
 						</div>
-					{/each} -->
-					<div class="grid-item inline-block">
+					{/each} ==>
+					<!== <div class="mumbul grid-item z-50 inline-block" role="presentation" on:mouseenter={() => mlebukmetukke.play()} on:mouseleave={() => mlebukmetukke.reverse()}>
 						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pendampingan.png" alt="golo" />
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pendampingan</span> personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
 						</div>
 					</div>
-					<div class="grid-item inline-block">
+					<div class="mumbul grid-item inline-block">
 						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pelatihan.png" alt="golo" />
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pelatihan</span> keterampilan dalam pengelolaan limbah lingkungan.</p>
 						</div>
 					</div>
-					<div class="grid-item inline-block">
+					<div class="mumbul grid-item inline-block">
 						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/standarisasi.png" alt="golo" />
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Standarisasi</span> metode baku dalam pengelolaan sampah berkualitas.</p>
 						</div>
 					</div>
-					<div class="grid-item inline-block">
+					<div class="mumbul grid-item inline-block">
 						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/daurulang.png" alt="golo" />
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Daur Ulang</span> memanfaatkan sumber daya secara berkelanjutan.</p>
 						</div>
 					</div>
-					<div class="grid-item inline-block">
+					<div class="mumbul grid-item inline-block">
 						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pengelolaan.png" alt="golo" />
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pengelolaan</span> untuk mencapai hasil terbaik secara berkelanjutan.</p>
 						</div>
-					</div>
+					</div> ==>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 
 	<div class="spacer section-3"></div>
