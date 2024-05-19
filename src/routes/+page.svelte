@@ -4,6 +4,7 @@
 	import Layananleft from '$lib/layananleft.svelte';
 	import dpkCursor from '$lib/dpkCursor';
 	import Layanan from '$lib/layanan.svelte';
+	import { Application } from '@splinetool/runtime';
 	import { onMount } from 'svelte';
 	import { Button } from '$lib/components/ui/button/index';
 	import type { PageData } from './$types';
@@ -22,12 +23,19 @@
 	let section2;
 	let gridItem = [];
 	let product;
+	let canvas;
 
 	gsap.registerPlugin(ScrollTrigger);
 
 	let mlebukmetukke;
 
 	onMount(async () => {
+		const app = new Application(canvas);
+		app.load('https://prod.spline.design/zpBu3APUqpMJS1WI/scene.splinecode?v=1').then(() => {
+
+			
+		});
+
 		const diumbulkeee = () => {
 			// alert("ahhhhhhh");
 			gsap.to('.mumbul', { y: 10 });
@@ -327,35 +335,6 @@
 		const sec2_tl = gsap.timeline();
 
 
-		product.currentTime = 0;
-
-		sec2_tl.to(product, {
-			// currentTime: product.duration,
-			scrollTrigger: {
-				trigger: '.section-2',
-				start: '0%',
-				end: '100%',
-				scrub: false,
-				markers: true,
-				onUpdate:  (self) => {
-					// if (self.progress < 0.4) {
-					// 	product.currentTime = 0;
-					// 	product.play();
-					// } else {
-					// 	// Pause the video otherwise
-					// 	product.pause();
-					// }
-					
-					if(product.currentTime >= 4) {
-						product.pause()
-					} else {
-						product.play()
-					}
-					console.log("product.currentTime: " + product.currentTime)
-				}
-			}
-		});
-
 		// sec2_tl PINNER + MAX DURATION SETTER
 		sec2_tl.to('.section-2', {
 			// autoAlpha: 1,
@@ -649,11 +628,14 @@
 		  </div> -->
 	</div>
 	<div class="spacer section-2" bind:this={section2}>
-		<div class="flex h-full w-full items-center justify-center object-cover text-center">
-			<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
+		<!-- <div class="flex h-full w-full items-center justify-center object-cover text-center">
+			<!== <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> ==>
 			<video class="product h-full w-full object-cover" bind:this={product} controls>
 				<source src="product.mp4" type="video/mp4" />
 			</video>
+		</div> -->
+		<div class="fixed z-50 h-screen w-screen">
+			<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
 		</div>
 		<!-- <p class=" font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
 		<!-- <div>
