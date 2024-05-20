@@ -31,7 +31,7 @@
 
 	onMount(async () => {
 		const app = new Application(canvas);
-		app.load('https://prod.spline.design/zpBu3APUqpMJS1WI/scene.splinecode?v=1').then(() => {
+		app.load('https://prod.spline.design/zpBu3APUqpMJS1WI/scene.splinecode?v14').then(() => {
 			// SECTION 2
 			const sec2_tl = gsap.timeline();
 
@@ -345,49 +345,16 @@
 		});
 
 		sec1_tl.to('.stats-grid', {
-			y: -700,
+			y: -2000,
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
 				start: '350%',
-				end: '500%'
+				end: '800%'
 			}
 		});
 
 		mlebukmetukke = gsap.fromTo('.mumbul', { y: 0, paused: true }, { y: -30, paused: true });
-
-		// sec1_tl.to('.layanan', {
-		// 	autoAlpha: 1,
-		// 	scrollTrigger: {
-		// 		trigger: '.section-1',
-		// 		scrub: true,
-		// 		markers: false,
-		// 		start: '300%'
-		// 	}
-		// });
-
-		// sec1_tl.fromTo('.mask', {
-		// 	// autoAlpha: 1,
-		// 	maskSize: '1000vh',
-		// 	// alpha: 0,
-		// 	scrollTrigger: {
-		// 		trigger: '.section-1',
-		// 		scrub: true,
-		// 		start: '340%',
-		// 		end: '380%'
-		// 	}
-		// },
-		// {
-		// 	// autoAlpha: 1,
-		// 	maskSize: '230vh',
-		// 	// alpha: 0,
-		// 	scrollTrigger: {
-		// 		trigger: '.section-1',
-		// 		scrub: true,
-		// 		start: '340%',
-		// 		end: '380%'
-		// 	}
-		// });
 
 		// sec1_tl PINNER + MAX DURATION SETTER
 		sec1_tl.to('.section-1', {
@@ -396,7 +363,7 @@
 				trigger: '.section-1',
 				pin: true,
 				markers: false,
-				end: '500%'
+				end: '1000%'
 			}
 		});
 
@@ -476,12 +443,12 @@
 				<img width="48px" src="logo.svg" alt="golo" />
 			</div>
 			<div class="pt-12">
-				<img width="36px" class="dpk-hover float-right" data-hover-bg="#83B948" data-hover-text="Menu" src="burger.svg" alt="golo" />
+				<img width="36px" class="dpk-hover float-right" data-hover-bg="#8EE996" data-hover-text="Menu" src="burger.svg" alt="golo" />
 			</div>
 		</div>
 	</div>
 
-	<div class="header2 fixed z-30 opacity-0" style="filter: invert(89%) sepia(23%) saturate(295%) hue-rotate(80deg) brightness(90%) contrast(90%);">
+	<div class="header2 fixed z-30 opacity-0" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
 		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
 			<div class="pt-10">
 				<img width="48px" src="logo.svg" alt="golo" />
@@ -510,7 +477,7 @@
 			</div>
 			<div class="sampah absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 pt-64 text-center">
 				<p class="intro-desc font-jost text-4xl font-semibold tracking-tight text-black sm:text-xl md:text-2xl lg:text-xl xl:text-7xl">
-					akan menjadi <span style="color: #99D7B3;">asset</span> jika diolah dengan benar.
+					akan menjadi <span style="color: #8EE996;">asset</span> jika diolah dengan benar.
 				</p>
 			</div>
 		</div>
@@ -586,7 +553,7 @@
 				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
 				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
 				<div class="introx z-50 pt-10">
-					<Button variant="outline" class="dpk-hover mx-1 h-16 w-56 rounded-full px-2 text-3xl" data-hover-bg="#99D7B3" data-hover-text="↗">Book</Button>
+					<Button variant="outline" class="dpk-hover mx-1 h-16 w-56 rounded-full px-2 text-3xl" data-hover-bg="#8EE996" data-hover-text="↗">Book</Button>
 					<Button variant="ghost" class="mx-1 h-16 w-56 rounded-full border-[1px] border-white text-3xl text-white">Showcase</Button>
 					<!-- <Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Hubungi</Button> -->
 				</div>
@@ -618,30 +585,33 @@
 			<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
 		</div>
 
-		<div class="stats absolute flex h-full flex-col text-center opacity-0">
+		<div class="stats absolute flex h-full flex-col text-center opacity-0 items-center">
+			<div class="absolute z-0">
+				<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
+			</div>
 			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
 			<!-- <img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" /> -->
-			<p class="stats-text font-jost px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
-			<div class="stats-grid m-64 grid grid-cols-2 grid-rows-2 place-items-center items-center justify-center rounded-3xl bg-[#abd5b637] text-center">
-				<div class="py-28">
+			<p class="stats-text z-40 font-jost px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
+			<div class="stats-grid mt-20 w-fit p-5 gap-5 grid grid-cols-2 grid-rows-2 place-items-center items-center justify-center rounded-3xl bg-[#ffffff3d] text-center backdrop-blur-md shadow-[0px_0px_26px_rgba(0,0,0,0.05)] border-white border-[1px]">
+				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
 					<img class="inline w-12" src="/1.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#99D7B3]">+</span></p>
-					<p class="font-jost mx-32 text-[30px] font-light">Total Client Fasyankes</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
-				<div>
+				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
 					<img class="inline w-12" src="/2.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#99D7B3]">+</span></p>
-					<p class="font-jost mx-32 text-[30px] font-light">Total Client Non-Fasyankes</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
-				<div class="py-28">
+				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
 					<img class="inline w-12" src="/3.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#99D7B3]">+</span></p>
-					<p class="font-jost mx-32 text-[30px] font-light">Ton Sampah Setiap Hari</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
-				<div>
+				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
 					<img class="inline w-12" src="/4.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#99D7B3]">+</span></p>
-					<p class="font-jost mx-32 text-[30px] font-light">Melayani Rumah Setiap Hari</p>
+					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 			</div>
 
@@ -688,15 +658,13 @@
 				<source src="product.mp4" type="video/mp4" />
 			</video>
 		</div> -->
-		<div class="fixed z-50 h-screen w-screen">
-			<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
-		</div>
+
 		<!-- <p class=" font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
 		<!-- <div>
 			<!== <div class="vignette-top z-10"></div> ==>
 			<div class="z-50 h-screen w-screen bg-[#F4F9EF]">
 				<img class="absolute right-0 z-0 h-screen" src="/bg.png" alt="emak" />
-				<p class=" font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Dengan <span class="text-[#83B948]"> 5 layanan unggulan</span> dari kami untuk njenengan</p>
+				<p class=" font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Dengan <span class="text-[#8EE996]"> 5 layanan unggulan</span> dari kami untuk njenengan</p>
 				<div class="grid-container z-50 h-full w-full overflow-hidden whitespace-nowrap py-20" bind:this={gridContainer}>
 					<!== {#each Array.from({ length: 5 }) as _, i}
 						<div class="grid-item inline-block" bind:this={gridItem}>
