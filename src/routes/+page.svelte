@@ -31,7 +31,7 @@
 
 	onMount(async () => {
 		const app = new Application(canvas);
-		app.load('https://prod.spline.design/zpBu3APUqpMJS1WI/scene.splinecode?v14').then(() => {
+		app.load('https://prod.spline.design/zpBu3APUqpMJS1WI/scene.splinecode?v16').then(() => {
 			// SECTION 2
 			const sec2_tl = gsap.timeline();
 

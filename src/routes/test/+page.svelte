@@ -51,8 +51,8 @@
 <div class="spacer section-2">
 	<div class="flex h-full w-full items-center justify-center object-cover text-center">
 		<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
-		<video class="product h-full w-full object-cover" bind:this={product} controls>
-			<source src="hooh.mov" type="video/mp4" />
-		</video>
+		<div id="canvaswrapper" bind:this={canvaswrapper} class="canvaswrapper fixed z-50 h-screen w-screen">
+			<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
+		</div>
 	</div>
 </div>
