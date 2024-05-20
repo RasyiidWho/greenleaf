@@ -31,6 +31,49 @@
 
 	onMount(async () => {
 		const app = new Application(canvas);
+
+		//-------------------------------------------------
+		// HIDE UNHIDE FOR PERFORMACE
+		//-------------------------------------------------
+
+		gsap.to('.slide-1', {
+			autoAlpha: 0,
+			display: "none",
+			// alpha: 0,
+			scrollTrigger: {
+				trigger: '.section-1',
+				start: '320%',
+				end: '320%',
+				toggleActions: "play play reset reset"
+			}
+		});
+
+
+		gsap.to('.slide-2', {
+			autoAlpha: 0,
+			display: "none",
+			// alpha: 0,
+			scrollTrigger: {
+				trigger: '.section-1',
+				start: '200%',
+				end: '200%',
+				toggleActions: "play play reset reset"
+			}
+		});
+
+		gsap.to('.slide-3', {
+			autoAlpha: 0,
+			display: "none",
+			// alpha: 0,
+			scrollTrigger: {
+				trigger: '.section-1',
+				start: '320%',
+				end: '320%',
+				toggleActions: "play play reset reset"
+			}
+		});
+
+
 		app.load('https://draft.spline.design/aG-x4dqYqRnAbsAz/scene.splinecode').then(() => {
 			// SECTION 2
 			const sec2_tl = gsap.timeline();
@@ -177,16 +220,16 @@
 			}
 		});
 
-		sec1_tl.to('.intro-batik', {
-			autoAlpha: 0,
-			// alpha: 0,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '0%',
-				end: '250%'
-			}
-		});
+		// sec1_tl.to('.intro-batik', {
+		// 	autoAlpha: 0,
+		// 	// alpha: 0,
+		// 	scrollTrigger: {
+		// 		trigger: '.section-1',
+		// 		scrub: true,
+		// 		start: '0%',
+		// 		end: '250%'
+		// 	}
+		// });
 
 		sec1_tl.to('.header', {
 			autoAlpha: 1,
@@ -272,14 +315,17 @@
 
 		sec1_tl.to('.stats', {
 			autoAlpha: 1,
+			display: "flex",
 			// alpha: 0,
 			scrollTrigger: {
 				trigger: '.section-1',
 				scrub: true,
-				start: '100%',
-				end: '200%'
+				start: '250%',
+				end: '350%'
 			}
 		});
+
+		
 
 		sec1_tl.to('.header2', {
 			autoAlpha: 1,
@@ -388,6 +434,11 @@
 
 		gsap.set(splitClient.lines, { autoAlpha: 0 });
 		gsap.set('.stats', { autoAlpha: 0 });
+		gsap.set('.stats', { display: "none" });
+		// gsap.set('.slide-1', { visibility: 0, display: "none" });
+		// gsap.set('.slide-2', { visibility: 0, display: "none" });
+		// gsap.set('.slide-3', { visibility: 0, display: "none" });
+		// gsap.set('.slide-4', { visibility: 0, display: "none" });
 
 		// gsap.set('.grid-item', {rotate: -2})
 
@@ -461,7 +512,7 @@
 	</div>
 
 	<div class="spacer section-1 flex h-max">
-		<div class="z-50 flex h-full w-full">
+		<div class="slide-1 z-50 flex h-full w-full">
 			<div class="mask showreel flex h-full w-full items-center justify-center object-cover text-center mask-size-44 mask-repeat-no-repeat mask-position-center mask-image-[url('/ox.svg')]">
 				<!-- <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> -->
 				<video class="h-full w-full object-cover" id="showreel" loop autoplay muted>
@@ -482,7 +533,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="absolute">
+		<div class="slide-2 absolute">
 			<div class="intro-batik flex whitespace-nowrap pt-1 font-extrabold">
 				<div class="who-marquee-reverse who inline-block text-black">
 					<img class="inline w-96" src="/pattern.svg" alt="golo" />
@@ -548,7 +599,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="absolute z-50 flex h-full w-full items-center justify-center text-center">
+		<div class="slide-3 absolute z-50 flex h-full w-full items-center justify-center text-center">
 			<div class="showreel-overlay intro absolute z-50 flex flex-col pt-0 opacity-0">
 				<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
 				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
@@ -586,7 +637,7 @@
 			<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
 		</div>
 
-		<div class="stats absolute flex h-full flex-col text-center opacity-0 items-center">
+		<div class="slide-4 stats absolute flex h-full flex-col text-center opacity-0 items-center">
 			<div class="absolute z-0 w-screen h-screen">
 				<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
 			</div>
