@@ -387,6 +387,7 @@
 		// gsap.set('.introx', { autoAlpha: 0 });
 
 		gsap.set(splitClient.lines, { autoAlpha: 0 });
+		gsap.set('.stats', { autoAlpha: 0 });
 
 		// gsap.set('.grid-item', {rotate: -2})
 
@@ -586,7 +587,7 @@
 		</div>
 
 		<div class="stats absolute flex h-full flex-col text-center opacity-0 items-center">
-			<div class="absolute z-0">
+			<div class="absolute z-0 w-screen h-screen">
 				<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
 			</div>
 			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
