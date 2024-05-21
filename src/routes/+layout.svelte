@@ -8,6 +8,6 @@
 <!-- <ScrollArea class="h-auto rounded-md border">
 
 </ScrollArea> -->
-<Svrollbar />
+<!-- <Svrollbar /> -->
 	<slot />
 

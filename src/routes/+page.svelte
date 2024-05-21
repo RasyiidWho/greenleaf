@@ -36,127 +36,472 @@
 		// HIDE UNHIDE FOR PERFORMACE
 		//-------------------------------------------------
 
-		gsap.to('.slide-1', {
+
+		gsap.to('.slide-1', { // video
 			autoAlpha: 0,
-			display: "none",
+			display: 'none',
 			// alpha: 0,
 			scrollTrigger: {
 				trigger: '.section-1',
 				start: '320%',
 				end: '320%',
-				toggleActions: "play play reset reset"
+				toggleActions: 'play play reset reset'
 			}
 		});
 
-
-		gsap.to('.slide-2', {
+		gsap.to('.slide-2', { // batik
 			autoAlpha: 0,
-			display: "none",
+			display: 'none',
 			// alpha: 0,
 			scrollTrigger: {
 				trigger: '.section-1',
 				start: '200%',
 				end: '200%',
-				toggleActions: "play play reset reset"
+				toggleActions: 'play play reset reset'
 			}
 		});
 
-		gsap.to('.slide-3', {
-			autoAlpha: 0,
-			display: "none",
+		gsap.to('.slide-3', { // tulisan ngarep video
+			autoAlpha: 1,
+			display: 'flex',
 			// alpha: 0,
 			scrollTrigger: {
 				trigger: '.section-1',
-				start: '320%',
-				end: '320%',
-				toggleActions: "play play reset reset"
+				start: '40%',
+				end: '350%',
+				// markers: false,
+				toggleActions: 'play reset play reset'
 			}
 		});
 
+		// gsap.to('.slide-3', {
+		// 	autoAlpha: 0,
+		// 	display: 'none',
+		// 	// alpha: 0,
+		// 	scrollTrigger: {
+		// 		trigger: '.section-1',
+		// 		start: '320%',
+		// 		end: '320%',
+		// 		toggleActions: 'play play reset reset'
+		// 	}
+		// });
 
-		app.load('https://draft.spline.design/aG-x4dqYqRnAbsAz/scene.splinecode').then(() => {
+		gsap.to('.slide-4', {
+				autoAlpha: 1,
+				display: 'flex',
+				// alpha: 0,
+				scrollTrigger: {
+					trigger: '.section-1',
+					start: '250%',
+					end: '550%',
+					markers: false,
+					toggleActions: 'play reset play reset'
+				}
+			});
+
+
+		gsap.to('.slide-5', {
+			autoAlpha: 1,
+			display: 'flex',
+			// alpha: 0,
+			scrollTrigger: {
+				trigger: '.section-1',
+				start: '250%',
+				end: '250%',
+				// markers: false,
+				toggleActions: 'play play reset reset'
+			}
+		});
+
+		app.load('https://draft.spline.design/jTCpiZpFUVAUQr-o/scene.splinecode').then(() => {
 			// SECTION 2
 			const sec2_tl = gsap.timeline();
+			// SECTION 1
+			const sec1_tl = gsap.timeline();
 
-			sec2_tl.to('.section-2', {
+			sec1_tl.to('.mask', {
+				maskSize: '500%',
+				// alpha: 0,
 				scrollTrigger: {
-					trigger: '.section-2',
+					trigger: '.section-1',
+					scrub: true,
+					start: '0%',
+					end: '200%'
+				}
+			});
+
+			sec1_tl.to('.showreel-overlay', {
+				autoAlpha: 1,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					start: '40%',
+					end: '50%'
+				}
+			});
+
+			sec1_tl.to('.intro-title', {
+				autoAlpha: 0,
+				scale: 3,
+				// alpha: 0,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					start: '0%',
+					end: '30%'
+				}
+			});
+
+			sec1_tl.to('.intro-desc', {
+				autoAlpha: 0,
+				y: -75,
+				// alpha: 0,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					start: '0%',
+					end: '200%'
+				}
+			});
+
+			// sec1_tl.to('.intro-batik', {
+			// 	autoAlpha: 0,
+			// 	// alpha: 0,
+			// 	scrollTrigger: {
+			// 		trigger: '.section-1',
+			// 		scrub: true,
+			// 		start: '0%',
+			// 		end: '250%'
+			// 	}
+			// });
+
+			sec1_tl.to('.header', {
+				autoAlpha: 1,
+				scrollTrigger: {
+					trigger: '.section-1',
 					start: '50%',
-					end: '100%',
+					end: '150%',
+					scrub: false,
+					markers: false,
+					onEnter() {
+						// sec1_tl.to(splitSolusi.lines, { autoAlpha: 1 });
+						sec1_tl.to('.header', { y: 0, autoAlpha: 1, duration: 0.5, stagger: 0.01 });
+					},
+					onLeaveBack() {
+						sec1_tl.to('.header', { y: -100, autoAlpha: 0, duration: 1, stagger: 0.001 });
+					}
+				}
+			});
+
+			sec1_tl.to('.introx', {
+				// y: 24,
+				autoAlpha: 1,
+				// duration: 3.5,
+				// stagger: 0.01,
+				scrollTrigger: {
+					trigger: '.section-1',
+					start: '50%',
+					end: '150%',
+					scrub: false,
+					markers: false,
+					onEnter() {
+						sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
+					},
+					onLeaveBack() {
+						sec1_tl.to(splitIntro.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
+					},
+
+					onEnterBack() {
+						sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
+					},
+					onLeave() {
+						sec1_tl.to(splitIntro.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
+					}
+				}
+			});
+
+			sec1_tl.to('.clientx', {
+				autoAlpha: 1,
+				scrollTrigger: {
+					trigger: '.section-1',
+					start: '150%',
+					end: '250%',
+					scrub: false,
+					markers: false,
+					onEnter() {
+						// sec1_tl.to(splitSolusi.lines, { autoAlpha: 1 });
+						sec1_tl.to(splitClient.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
+					},
+					onLeaveBack() {
+						sec1_tl.to(splitClient.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
+					},
+
+					onEnterBack() {
+						sec1_tl.to(splitClient.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
+						// sec1_tl.to(splitSolusi.lines, { y: 24, autoAlpha: 0, duration: 0.5, stagger: 0.2 });
+					},
+					onLeave() {
+						// sec1_tl.to(splitClient.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
+					}
+				}
+			});
+
+			sec1_tl.to('.slider', {
+				autoAlpha: 1,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					markers: false,
+					start: '150%',
+					end: '260%'
+				}
+			});
+
+
+			sec1_tl.to('.header2', {
+				autoAlpha: 1,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					markers: false,
+					start: '300%'
+				}
+			});
+
+			sec1_tl.to('.showreel', {
+				y: -1000,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					markers: false,
+					start: '250%',
+					end: '350%'
+				}
+			});
+
+			sec1_tl.to('.slider', {
+				y: -1000,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					markers: false,
+					start: '250%',
+					end: '350%'
+				}
+			});
+
+			sec1_tl.to('.header', {
+				y: -1000,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					markers: false,
+					start: '250%',
+					end: '350%'
+				}
+			});
+
+			sec1_tl.to('.showreel-overlay', {
+				y: -1000,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					start: '250%',
+					end: '350%'
+				}
+			});
+
+			sec1_tl.to('.stats-text', {
+				autoAlpha: 0,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					start: '350%',
+					end: '380%'
+				}
+			});
+
+			sec1_tl.to('.stats-grid', {
+				y: -2000,
+				scrollTrigger: {
+					trigger: '.section-1',
+					scrub: true,
+					start: '350%',
+					end: '800%'
+				}
+			});
+
+			sec1_tl.to('.section-1', {
+				scrollTrigger: {
+					trigger: '.section-1',
+					start: '600%',
+					end: '700%',
+					markers: false,
 					onEnter() {
 						app.setVariable('1', '1');
 					},
+					onLeaveBack() {
+						app.setVariable('0', '1');
+					}
 				}
 			});
-			
-			sec2_tl.to('.section-2', {
+
+			sec1_tl.to('.section-1', {
 				scrollTrigger: {
-					trigger: '.section-2',
-					start: '100%',
-					end: '150%',
+					trigger: '.section-1',
+					start: '700%',
+					end: '800%',
+					markers: false,
 					onEnter() {
-						app.setVariable('2', '2');
+						app.setVariable('2', '1');
 					},
+					onLeaveBack() {
+						app.setVariable('1', '1');
+					}
 				}
 			});
 
-			sec2_tl.to('.section-2', {
+			sec1_tl.to('.section-1', {
 				scrollTrigger: {
-					trigger: '.section-2',
-					start: '150%',
-					end: '200%',
+					trigger: '.section-1',
+					start: '800%',
+					end: '900%',
+					markers: false,
 					onEnter() {
-						app.setVariable('3', '3');
+						app.setVariable('3', '1');
 					},
+					onLeaveBack() {
+						app.setVariable('2', '1');
+					}
 				}
 			});
 
-			sec2_tl.to('.section-2', {
+			sec1_tl.to('.section-1', {
 				scrollTrigger: {
-					trigger: '.section-2',
-					start: '200%',
-					end: '250%',
+					trigger: '.section-1',
+					start: '900%',
+					end: '1000%',
+					markers: false,
 					onEnter() {
-						app.setVariable('4', '4');
+						app.setVariable('4', '1');
 					},
+					onLeaveBack() {
+						app.setVariable('3', '1');
+					}
 				}
 			});
 
-
-			sec2_tl.to('.section-2', {
+			sec1_tl.to('.section-1', {
 				scrollTrigger: {
-					trigger: '.section-2',
-					start: '250%',
-					end: '300%',
+					trigger: '.section-1',
+					start: '1000%',
+					end: '1100%',
+					markers: false,
 					onEnter() {
-						app.setVariable('5', '5');
+						app.setVariable('5', '1');
 					},
+					onLeaveBack() {
+						app.setVariable('4', '1');
+					}
 				}
 			});
 
+			// sec1_tl.to('.section-1', {
+			// 	scrollTrigger: {
+			// 		trigger: '.section-1',
+			// 		start: '1100%',
+			// 		end: '1200%',
+			// 		markers: false,
+			// 		onEnter() {
+			// 			app.setVariable('1', '1');
+			// 		},
+			// 		onLeaveBack() {
+			// 			app.setVariable('0', '1');
+			// 		}
+			// 	}
+			// });
 
+			// mlebukmetukke = gsap.fromTo('.mumbul', { y: 0, paused: true }, { y: -30, paused: true });
 
-			// sec2_tl PINNER + MAX DURATION SETTER
-			sec2_tl.to('.section-2', {
+			// sec1_tl PINNER + MAX DURATION SETTER
+			sec1_tl.to('.section-1', {
 				// autoAlpha: 1,
 				scrollTrigger: {
-					trigger: '.section-2',
+					trigger: '.section-1',
 					pin: true,
 					markers: false,
-					end: '300%'
+					end: '1100%',
+					onUpdate: (x) => {
+						console.log(x.progress * 1100)
+					}
 				}
 			});
+
+			// sec2_tl.to('.section-2', {
+			// 	scrollTrigger: {
+			// 		trigger: '.section-2',
+			// 		start: '100%',
+			// 		end: '150%',
+			// 		onEnter() {
+			// 			app.setVariable('2', '2');
+			// 		},
+			// 	}
+			// });
+
+			// sec2_tl.to('.section-2', {
+			// 	scrollTrigger: {
+			// 		trigger: '.section-2',
+			// 		start: '150%',
+			// 		end: '200%',
+			// 		onEnter() {
+			// 			app.setVariable('3', '3');
+			// 		},
+			// 	}
+			// });
+
+			// sec2_tl.to('.section-2', {
+			// 	scrollTrigger: {
+			// 		trigger: '.section-2',
+			// 		start: '200%',
+			// 		end: '250%',
+			// 		onEnter() {
+			// 			app.setVariable('4', '4');
+			// 		},
+			// 	}
+			// });
+
+			// sec2_tl.to('.section-2', {
+			// 	scrollTrigger: {
+			// 		trigger: '.section-2',
+			// 		start: '250%',
+			// 		end: '300%',
+			// 		onEnter() {
+			// 			app.setVariable('5', '5');
+			// 		},
+			// 	}
+			// });
+
+			// // sec2_tl PINNER + MAX DURATION SETTER
+			// sec2_tl.to('.section-2', {
+			// 	// autoAlpha: 1,
+			// 	scrollTrigger: {
+			// 		trigger: '.section-2',
+			// 		pin: true,
+			// 		markers: false,
+			// 		end: '300%'
+			// 	}
+			// });
 		});
 
-		const diumbulkeee = () => {
-			// alert("ahhhhhhh");
-			gsap.to('.mumbul', { y: 10 });
-		};
+		// const diumbulkeee = () => {
+		// 	// alert("ahhhhhhh");
+		// 	gsap.to('.mumbul', { y: 10 });
+		// };
 
-		function diumbulkeeee() {
-			// alert("ahhhhhhh");
-			gsap.to('.mumbul', { y: 10 });
-		}
+		// function diumbulkeeee() {
+		// 	// alert("ahhhhhhh");
+		// 	gsap.to('.mumbul', { y: 10 });
+		// }
 
 		// UxCursor({
 		// 	size: 30, // Cambio del ancho y alto del cursor. Por defecto está en 25
@@ -171,247 +516,6 @@
 		const customCursor = new dpkCursor({ ease: 0.11 });
 		let splitIntro = new SplitType('.introx');
 		let splitClient = new SplitType('.clientx');
-
-		// SECTION 1
-		const sec1_tl = gsap.timeline();
-
-		sec1_tl.to('.mask', {
-			maskSize: '500%',
-			// alpha: 0,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '0%',
-				end: '200%'
-			}
-		});
-
-		sec1_tl.to('.showreel-overlay', {
-			autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '40%',
-				end: '50%'
-			}
-		});
-
-		sec1_tl.to('.intro-title', {
-			autoAlpha: 0,
-			scale: 3,
-			// alpha: 0,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '0%',
-				end: '30%'
-			}
-		});
-
-		sec1_tl.to('.intro-desc', {
-			autoAlpha: 0,
-			y: -75,
-			// alpha: 0,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '0%',
-				end: '200%'
-			}
-		});
-
-		// sec1_tl.to('.intro-batik', {
-		// 	autoAlpha: 0,
-		// 	// alpha: 0,
-		// 	scrollTrigger: {
-		// 		trigger: '.section-1',
-		// 		scrub: true,
-		// 		start: '0%',
-		// 		end: '250%'
-		// 	}
-		// });
-
-		sec1_tl.to('.header', {
-			autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				start: '50%',
-				end: '150%',
-				scrub: false,
-				markers: false,
-				onEnter() {
-					// sec1_tl.to(splitSolusi.lines, { autoAlpha: 1 });
-					sec1_tl.to('.header', { y: 0, autoAlpha: 1, duration: 0.5, stagger: 0.01 });
-				},
-				onLeaveBack() {
-					sec1_tl.to('.header', { y: -100, autoAlpha: 0, duration: 1, stagger: 0.001 });
-				}
-			}
-		});
-
-		sec1_tl.to('.introx', {
-			// y: 24,
-			autoAlpha: 1,
-			// duration: 3.5,
-			// stagger: 0.01,
-			scrollTrigger: {
-				trigger: '.section-1',
-				start: '50%',
-				end: '150%',
-				scrub: false,
-				markers: false,
-				onEnter() {
-					sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
-				},
-				onLeaveBack() {
-					sec1_tl.to(splitIntro.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
-				},
-
-				onEnterBack() {
-					sec1_tl.to(splitIntro.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
-				},
-				onLeave() {
-					sec1_tl.to(splitIntro.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
-				}
-			}
-		});
-
-		sec1_tl.to('.clientx', {
-			autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				start: '150%',
-				end: '250%',
-				scrub: false,
-				markers: false,
-				onEnter() {
-					// sec1_tl.to(splitSolusi.lines, { autoAlpha: 1 });
-					sec1_tl.to(splitClient.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
-				},
-				onLeaveBack() {
-					sec1_tl.to(splitClient.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
-				},
-
-				onEnterBack() {
-					sec1_tl.to(splitClient.lines, { y: 24, autoAlpha: 1, duration: 0.5, stagger: 0.2 });
-					// sec1_tl.to(splitSolusi.lines, { y: 24, autoAlpha: 0, duration: 0.5, stagger: 0.2 });
-				},
-				onLeave() {
-					// sec1_tl.to(splitClient.lines, { y: -24, autoAlpha: 0, duration: 0.01, stagger: 0.001 });
-				}
-			}
-		});
-
-		sec1_tl.to('.slider', {
-			autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				markers: false,
-				start: '150%',
-				end: '260%'
-			}
-		});
-
-		sec1_tl.to('.stats', {
-			autoAlpha: 1,
-			display: "flex",
-			// alpha: 0,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '250%',
-				end: '350%'
-			}
-		});
-
-		
-
-		sec1_tl.to('.header2', {
-			autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				markers: false,
-				start: '300%'
-			}
-		});
-
-		sec1_tl.to('.showreel', {
-			y: -1000,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				markers: false,
-				start: '250%',
-				end: '350%'
-			}
-		});
-
-		sec1_tl.to('.slider', {
-			y: -1000,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				markers: false,
-				start: '250%',
-				end: '350%'
-			}
-		});
-
-		sec1_tl.to('.header', {
-			y: -1000,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				markers: false,
-				start: '250%',
-				end: '350%'
-			}
-		});
-
-		sec1_tl.to('.showreel-overlay', {
-			y: -1000,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '250%',
-				end: '350%'
-			}
-		});
-
-		sec1_tl.to('.stats-text', {
-			autoAlpha: 0,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '350%',
-				end: '380%'
-			}
-		});
-
-		sec1_tl.to('.stats-grid', {
-			y: -2000,
-			scrollTrigger: {
-				trigger: '.section-1',
-				scrub: true,
-				start: '350%',
-				end: '800%'
-			}
-		});
-
-		mlebukmetukke = gsap.fromTo('.mumbul', { y: 0, paused: true }, { y: -30, paused: true });
-
-		// sec1_tl PINNER + MAX DURATION SETTER
-		sec1_tl.to('.section-1', {
-			// autoAlpha: 1,
-			scrollTrigger: {
-				trigger: '.section-1',
-				pin: true,
-				markers: false,
-				end: '1000%'
-			}
-		});
 
 		gsap.from('.who-marquee', {
 			repeat: -1,
@@ -433,13 +537,14 @@
 		// gsap.set('.introx', { autoAlpha: 0 });
 
 		gsap.set(splitClient.lines, { autoAlpha: 0 });
-		gsap.set('.stats', { autoAlpha: 0 });
-		gsap.set('.stats', { display: "none" });
-		// gsap.set('.slide-1', { visibility: 0, display: "none" });
-		// gsap.set('.slide-2', { visibility: 0, display: "none" });
-		// gsap.set('.slide-3', { visibility: 0, display: "none" });
-		// gsap.set('.slide-4', { visibility: 0, display: "none" });
-
+		// gsap.set('.stats', { autoAlpha: 0 });
+		// gsap.set('.stats', { display: 'none' });
+		gsap.set('.slide-1', { autoAlpha: 1, display: "flex" });
+		gsap.set('.slide-2', { autoAlpha: 1, display: "block" });
+		gsap.set('.slide-3', { autoAlpha: 0, display: "none" });
+		gsap.set('.slide-4', { autoAlpha: 0, display: "none" });
+		gsap.set('.slide-5', { autoAlpha: 0, display: "none" });
+		
 		// gsap.set('.grid-item', {rotate: -2})
 
 		// gsap.set('.mask', {
@@ -599,7 +704,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="slide-3 absolute z-50 flex h-full w-full items-center justify-center text-center">
+		<div class="slide-3 hidden opacity-0 absolute z-50 h-full w-full items-center justify-center text-center">
 			<div class="showreel-overlay intro absolute z-50 flex flex-col pt-0 opacity-0">
 				<p class="introx font-jost text-7xl font-normal leading-none text-white">Pilah Berkah merupakan</p>
 				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
@@ -637,61 +742,75 @@
 			<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
 		</div>
 
-		<div class="slide-4 stats absolute flex h-full flex-col text-center opacity-0 items-center">
-			<div class="absolute z-0 w-screen h-screen">
-				<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
-			</div>
-			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
+		<div class="slide-4 stats absolute hidden h-full flex-col items-center text-center opacity-0">
+			
 			<!-- <img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" /> -->
-			<p class="stats-text z-40 font-jost px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
-			<div class="stats-grid mt-20 w-fit p-5 gap-5 grid grid-cols-2 grid-rows-2 place-items-center items-center justify-center rounded-3xl bg-[#ffffff3d] text-center backdrop-blur-md shadow-[0px_0px_26px_rgba(0,0,0,0.05)] border-white border-[1px]">
-				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
+			<p class="stats-text font-jost z-40 px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
+			<div class="stats-grid mt-20 grid w-fit grid-cols-2 grid-rows-2 place-items-center items-center justify-center gap-5 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 text-center shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/1.svg" alt="golo" />
 					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#8EE996]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
-				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/2.svg" alt="golo" />
 					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#8EE996]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
-				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/3.svg" alt="golo" />
 					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#8EE996]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
-				<div class="p-32 bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] rounded-3xl">
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/4.svg" alt="golo" />
 					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#8EE996]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 			</div>
+		</div>
 
-			<!-- <Layanan>
-					<img class="inline w-96 opacity-55" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern" />
-				</Layanan> -->
-			<!-- <Layananleft>
-				<!== <p class="font-jost absolute z-50 text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
-				<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> ==>
-				<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PENDAMPINGAN</p>
-				<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img"/>
-				<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
-					Our intuitive interface makes it easy to navigate and find what you need ur intuitive
-					interface makes it easy.
-				</p>
-				<img class="inline w-56" src="/pendampingan_pt.svg" alt="golo" slot="layanan-pattern"/>
-			</Layananleft>
-			<Layananright>
-				<!== <p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">aaaaaa</p>
-				<img class="inline w-96" src="/pendampingan.png" alt="" slot="layanan-img" /> ==>
-				<p class="font-jost absolute text-center text-7xl font-bold" slot="layanan-title">PELATIHAN</p>
-				<img class="inline w-96" src="/pelatihan.png" alt="" slot="layanan-img"/>
-				<p class="text-2xl text-right p-32" style="color: #888888;" slot="layanan-desc">
-					Our intuitive interface makes it easy to navigate and find what you need ur intuitive
-					interface makes it easy.
-				</p>
-				<img class="inline w-56" src="/pelatihan_pt.svg" alt="golo" slot="layanan-pattern"/>
-			</Layananright> -->
+		<div class="slide-5 absolute h-full w-full -z-10 flex-col items-center text-center opacity-0 hidden">
+			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
+			<div class="absolute h-screen w-screen">
+				<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
+			</div>
+			
+			<div class="pb-12 absolute bottom-0 flex justify-center">
+				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+					<p class="font-jost text-3xl font-normal text-left pb-5 pl-2 flex items-center">
+						<img class="inline w-10 mr-3" src="/pendampingan_line.svg" alt="golo" />
+						Pendampingan
+					  </p>
+					<div class="rounded-xl bg-white shadow-[0px_0px_26px_rgba(0,0,0,0.05)] p-4">
+						<p class="font-jost text-lg font-light text-left"><b>Pendampingan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+					</div>
+				</div>
+			</div>
+			<!-- <img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" /> -->
+			<!-- <p class="stats-text font-jost z-40 px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
+			<div class="stats-grid mt-20 grid w-fit grid-cols-2 grid-rows-2 place-items-center items-center justify-center gap-5 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 text-center shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-md">
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+					<img class="inline w-12" src="/1.svg" alt="golo" />
+					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
+				</div>
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+					<img class="inline w-12" src="/2.svg" alt="golo" />
+					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
+				</div>
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+					<img class="inline w-12" src="/3.svg" alt="golo" />
+					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
+				</div>
+				<div class="rounded-3xl bg-white p-32 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+					<img class="inline w-12" src="/4.svg" alt="golo" />
+					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
+				</div>
+			</div> -->
 		</div>
 
 		<!-- <div class="relative inline-block pt-10">
@@ -711,22 +830,22 @@
 			</video>
 		</div> -->
 
-		<!-- <p class=" font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
-		<!-- <div>
-			<!== <div class="vignette-top z-10"></div> ==>
+		<p class="font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p>
+		<div>
+			<!-- <div class="vignette-top z-10"></div> -->
 			<div class="z-50 h-screen w-screen bg-[#F4F9EF]">
 				<img class="absolute right-0 z-0 h-screen" src="/bg.png" alt="emak" />
 				<p class=" font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Dengan <span class="text-[#8EE996]"> 5 layanan unggulan</span> dari kami untuk njenengan</p>
 				<div class="grid-container z-50 h-full w-full overflow-hidden whitespace-nowrap py-20" bind:this={gridContainer}>
-					<!== {#each Array.from({ length: 5 }) as _, i}
+					<!-- {#each Array.from({ length: 5 }) as _, i}
 						<div class="grid-item inline-block" bind:this={gridItem}>
 							<img class="w-56 absolute right-36" src="/pelatihan.svg" alt="golo"/>
 							<div class="p-10 m-4 w-[500px] h-[500px] bg-white rounded-3xl" >
 								{i + 1}
 							</div>
 						</div>
-					{/each} ==>
-					<!== <div class="mumbul grid-item z-50 inline-block" role="presentation" on:mouseenter={() => mlebukmetukke.play()} on:mouseleave={() => mlebukmetukke.reverse()}>
+					{/each} -->
+					<!-- <div class="mumbul grid-item z-50 inline-block" role="presentation" on:mouseenter={() => mlebukmetukke.play()} on:mouseleave={() => mlebukmetukke.reverse()}>
 						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pendampingan.png" alt="golo" />
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pendampingan</span> personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
@@ -755,10 +874,10 @@
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pengelolaan</span> untuk mencapai hasil terbaik secara berkelanjutan.</p>
 						</div>
-					</div> ==>
+					</div> -->
 				</div>
 			</div>
-		</div> -->
+		</div>
 	</div>
 
 	<div class="spacer section-3"></div>
