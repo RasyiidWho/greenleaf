@@ -950,56 +950,56 @@
 			<div class="product-1 absolute bottom-0 flex justify-center pb-12 opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-3xl font-normal">
-						<img class="mr-3 inline w-10" src="/pendampingan_line.svg" alt="golo" />
+						<img class="mr-3 inline w-12" src="/pendampingan_line.svg" alt="golo" />
 						Pendampingan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-left text-lg font-light"><b>Pendampingan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-left text-lg font-light"><b>Pendampingan</b> pembentukan kelembagaan OSS berbasis resiko dalam penanganan segala jenis sampah.</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="product-2 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
-					<p class="font-jost flex items-center pb-5 pl-2 text-left text-3xl font-normal">
+				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-10" src="/pelatihan_line.svg" alt="golo" />
 						Pelatihan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-left text-lg font-light"><b>Pelatihan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-left text-3xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management.</p>
 					</div>
 				</div>
 			</div>
 			<div class="product-3 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
-					<p class="font-jost flex items-center pb-5 pl-2 text-left text-3xl font-normal">
-						<img class="mr-3 inline w-10" src="/standarisasi_line.svg" alt="golo" />
+				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
+						<img class="mr-3 inline w-12" src="/standarisasi_line.svg" alt="golo" />
 						Standarisasi
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-left text-lg font-light"><b>Standarisasi</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-left text-3xl font-light"><b>Standarisasi</b> Kajian dan standar teknis tata Kelola penyehatan lingkungan baik & benar.</p>
 					</div>
 				</div>
 			</div>
 			<div class="product-4 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
-					<p class="font-jost flex items-center pb-5 pl-2 text-left text-3xl font-normal">
-						<img class="mr-3 inline w-8" src="/daurulang_line.svg" alt="golo" />
+				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
+						<img class="mr-3 inline w-10" src="/daurulang_line.svg" alt="golo" />
 						Daur Ulang
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-left text-lg font-light"><b>Daur Ulang</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-left text-3xl font-light"><b>Daur Ulang</b> Kebanyakan orang sering menjelaskan faktor kuncinya tergantung pada faktor primer dan sekunder data produk/jasa.</p>
 					</div>
 				</div>
 			</div>
 			<div class="product-5 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
-					<p class="font-jost flex items-center pb-5 pl-2 text-left text-3xl font-normal">
-						<img class="mr-3 inline w-10" src="/pengelolaan_line.svg" alt="golo" />
+				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
+						<img class="mr-3 inline w-12" src="/pengelolaan_line.svg" alt="golo" />
 						Pengelolaan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-left text-lg font-light"><b>Pengelolaan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-left text-3xl font-light"><b>Pengelolaan</b> sampah tuntas residu bertanggungjawab dan paripurna.</p>
 					</div>
 				</div>
 			</div>
