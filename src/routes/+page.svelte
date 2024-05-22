@@ -966,7 +966,7 @@
 						Pelatihan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-left text-3xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management.</p>
+						<p class="font-jost text-left text-2xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management.</p>
 					</div>
 				</div>
 			</div>
