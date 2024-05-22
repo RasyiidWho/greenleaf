@@ -113,7 +113,7 @@
 			}
 		});
 
-		app.load('https://draft.spline.design/1BPPsG7YS7oo9y7v/scene.splinecode').then(() => {
+		app.load('https://draft.spline.design/HgtHooC66XC5tUEc/scene.splinecode').then(() => {
 			// SECTION 2
 			const sec2_tl = gsap.timeline();
 			// SECTION 1
@@ -594,7 +594,7 @@
 		</Menubar.Root>
 	</div> -->
 
-	<div class="header fixed z-50 invert">
+	<!-- <div class="header fixed z-50 invert">
 		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
 			<div class="pt-10">
 				<img width="48px" src="logo.svg" alt="golo" />
@@ -603,7 +603,7 @@
 				<img width="36px" class="dpk-hover float-right" data-hover-bg="#8EE996" data-hover-text="Menu" src="burger.svg" alt="golo" />
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- <div class="header2 fixed z-30 opacity-0" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
 		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
@@ -616,7 +616,7 @@
 		</div>
 	</div> -->
 
-	<div class="header2 fixed z-[1000] opacity-0" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
+	<!-- <div class="header2 fixed z-[1000] opacity-0" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
 		<div class="grid grid-cols-2 grid-rows-1 gap-4">
 			<div>
 				<div class="pl-10 pt-8">
@@ -629,7 +629,19 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+
+	<header class="header z-[1000] fixed w-full py-14 px-10 flex justify-between items-center invert">
+        <!-- Logo 1 on the left -->
+        <div class="flex items-center">
+            <img src="logo.svg" alt="Logo 1" class="h-12">
+        </div>
+
+        <!-- Logo 2 on the right -->
+        <div class="flex items-center">
+            <img src="burger.svg" alt="Logo 2" class="h-8 dpk-hover"  data-hover-bg="#8EE996" data-hover-text="Menu">
+        </div>
+    </header>
 
 	<div class="spacer section-1 flex h-max">
 		<div class="slide-1 z-50 flex h-full w-full">
@@ -790,8 +802,20 @@
 			<div class="absolute h-screen w-screen">
 				<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
 			</div>
+
+			<header class="header2 z-0 fixed w-full py-14 px-10 flex justify-between items-center" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
+				<!-- Logo 1 on the left -->
+				<div class="flex items-center">
+					<img src="logo.svg" alt="Logo 1" class="h-12">
+				</div>
+		
+				<!-- Logo 2 on the right -->
+				<div class="flex items-center">
+					<img src="burger.svg" alt="Logo 2" class="h-8">
+				</div>
+			</header>
 			
-			<div class="product-1 pb-12 absolute bottom-0 flex justify-center">
+			<div class="product-1 pb-12 absolute bottom-0 flex justify-center opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost text-3xl font-normal text-left pb-5 pl-2 flex items-center">
 						<img class="inline w-10 mr-3" src="/pendampingan_line.svg" alt="golo" />
@@ -806,44 +830,44 @@
 			<div class="product-2 pb-12 absolute bottom-0 flex justify-center opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost text-3xl font-normal text-left pb-5 pl-2 flex items-center">
-						<img class="inline w-10 mr-3" src="/pendampingan_line.svg" alt="golo" />
-						Pendampingan
+						<img class="inline w-10 mr-3" src="/pelatihan_line.svg" alt="golo" />
+						Pelatihan
 					  </p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-lg font-light text-left"><b>Pendampingan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-lg font-light text-left"><b>Pelatihan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
 					</div>
 				</div>
 			</div>
 			<div class="product-3 pb-12 absolute bottom-0 flex justify-center opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost text-3xl font-normal text-left pb-5 pl-2 flex items-center">
-						<img class="inline w-10 mr-3" src="/pendampingan_line.svg" alt="golo" />
-						Pendampingan
+						<img class="inline w-10 mr-3" src="/standarisasi_line.svg" alt="golo" />
+						Standarisasi
 					  </p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-lg font-light text-left"><b>Pendampingan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-lg font-light text-left"><b>Standarisasi</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
 					</div>
 				</div>
 			</div>
 			<div class="product-4 pb-12 absolute bottom-0 flex justify-center opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost text-3xl font-normal text-left pb-5 pl-2 flex items-center">
-						<img class="inline w-10 mr-3" src="/pendampingan_line.svg" alt="golo" />
-						Pendampingan
+						<img class="inline w-10 mr-3" src="/daurulang_line.svg" alt="golo" />
+						Daur Ulang
 					  </p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-lg font-light text-left"><b>Pendampingan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-lg font-light text-left"><b>Daur Ulang</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
 					</div>
 				</div>
 			</div>
 			<div class="product-5 pb-12 absolute bottom-0 flex justify-center opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost text-3xl font-normal text-left pb-5 pl-2 flex items-center">
-						<img class="inline w-10 mr-3" src="/pendampingan_line.svg" alt="golo" />
-						Pendampingan
+						<img class="inline w-10 mr-3" src="/pengelolaan_line.svg" alt="golo" />
+						Pengelolaan
 					  </p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-lg font-light text-left"><b>Pendampingan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+						<p class="font-jost text-lg font-light text-left"><b>Pengelolaan</b> personal dalam pengelolaan limbah, untuk solusi praktik terbaik dalam segala hal. Personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
 					</div>
 				</div>
 			</div>
