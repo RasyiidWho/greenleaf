@@ -954,7 +954,7 @@
 						Pendampingan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-roboto text-left text-lg font-light"><b>Pendampingan</b> pembentukan kelembagaan OSS berbasis resiko dalam penanganan segala jenis sampah.</p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Pendampingan</b> pembentukan kelembagaan OSS berbasis resiko dalam penanganan segala jenis sampah.</p>
 					</div>
 				</div>
 			</div>
@@ -977,7 +977,7 @@
 						Standarisasi
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-jost text-left text-2xl font-light"><b>Standarisasi</b> Kajian dan standar teknis tata Kelola penyehatan lingkungan baik & benar.</p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Standarisasi</b> Kajian dan standar teknis tata Kelola penyehatan lingkungan baik & benar.</p>
 					</div>
 				</div>
 			</div>
@@ -988,7 +988,7 @@
 						Daur Ulang
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-roboto text-left text-3xl font-light"><b>Daur Ulang</b> Kebanyakan orang sering menjelaskan faktor kuncinya tergantung pada faktor primer dan sekunder data produk/jasa.</p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Daur Ulang</b> Kebanyakan orang sering menjelaskan faktor kuncinya tergantung pada faktor primer dan sekunder data produk/jasa.</p>
 					</div>
 				</div>
 			</div>
@@ -999,7 +999,7 @@
 						Pengelolaan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-roboto text-left text-3xl font-light"><b>Pengelolaan</b> sampah tuntas residu bertanggungjawab dan paripurna.</p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Pengelolaan</b> sampah tuntas residu bertanggungjawab dan paripurna.</p>
 					</div>
 				</div>
 			</div>
