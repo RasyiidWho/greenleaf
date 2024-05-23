@@ -114,7 +114,7 @@
 			}
 		});
 
-		app.load('https://draft.spline.design/o-ONWup0R9inxsxy/scene.splinecode').then(() => {
+		app.load('https://draft.spline.design/F2pFcq0fQpQuVsbM/scene.splinecode').then(() => {
 			// SECTION 2
 			const sec2_tl = gsap.timeline();
 			// SECTION 1
@@ -960,7 +960,7 @@
 			</div>
 
 			<div class="product-2 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-10" src="/pelatihan_line.svg" alt="golo" />
 						Pelatihan
@@ -971,18 +971,18 @@
 				</div>
 			</div>
 			<div class="product-3 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-12" src="/standarisasi_line.svg" alt="golo" />
 						Standarisasi
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-roboto text-left text-2xl font-light"><b>Standarisasi</b> Kajian dan standar teknis tata Kelola penyehatan lingkungan baik & benar.</p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Standarisasi</b> pembentukan kelembagaan OSS berbasis resiko dalam penanganan segala jenis sampah.</p>
 					</div>
 				</div>
 			</div>
 			<div class="product-4 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-10" src="/daurulang_line.svg" alt="golo" />
 						Daur Ulang
@@ -993,7 +993,7 @@
 				</div>
 			</div>
 			<div class="product-5 absolute bottom-0 flex justify-center pb-12 opacity-0">
-				<div class="grid w-1/2 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
+				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-12" src="/pengelolaan_line.svg" alt="golo" />
 						Pengelolaan
