@@ -13,6 +13,7 @@
 	import SplitType from 'split-type';
 	import Lenis from 'lenis';
 	import { Svrollbar } from 'svrollbar';
+	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
 	// import UxCursor from 'ux-cursor';
 	// import Cursor from 'custom-cursor'
 
@@ -95,7 +96,6 @@
 				trigger: '.section-1',
 				start: '230%',
 				end: '650%',
-				markers: true,
 				toggleActions: 'play reset play reset'
 			}
 		});
@@ -177,6 +177,7 @@
 
 			sec1_tl.to('.header', {
 				autoAlpha: 1,
+				display: 'flex',
 				scrollTrigger: {
 					trigger: '.section-1',
 					start: '50%',
@@ -185,10 +186,10 @@
 					markers: false,
 					onEnter() {
 						// sec1_tl.to(splitSolusi.lines, { autoAlpha: 1 });
-						sec1_tl.to('.header', { y: 0, autoAlpha: 1, duration: 0.5, stagger: 0.01 });
+						sec1_tl.to('.header', { y: 0, autoAlpha: 1, display: 'flex', duration: 0.5, stagger: 0.01 });
 					},
 					onLeaveBack() {
-						sec1_tl.to('.header', { y: -100, autoAlpha: 0, duration: 1, stagger: 0.001 });
+						sec1_tl.to('.header', { y: -100, autoAlpha: 0, display: 'none',duration: 1, stagger: 0.001 });
 					}
 				}
 			});
@@ -597,7 +598,7 @@
 					trigger: '.section-1',
 					pin: true,
 					markers: false,
-					end: '1600%'
+					end: '1200%'
 				}
 			});
 
@@ -814,16 +815,29 @@
 		</div>
 	</div> -->
 
-	<header class="header fixed z-[1000] flex w-full items-center justify-between px-10 py-14 invert">
+	<header class="header fixed z-50 w-full items-center justify-between px-10 py-14 invert hidden opacity-0">
 		<!-- Logo 1 on the left -->
 		<div class="flex items-center">
 			<img src="logo.svg" alt="Logo 1" class="h-12" />
 		</div>
 
-		<!-- Logo 2 on the right -->
-		<div class="flex items-center">
-			<img src="burger.svg" alt="Logo 2" class="dpk-hover h-10" data-hover-bg="#7FDB97" data-hover-text="Menu" />
-		</div>
+		<DropdownMenu.Root>
+			<DropdownMenu.Trigger>
+				<div class="flex items-center">
+					<img src="burger.svg" alt="Logo 2" class="dpk-hover h-12" data-hover-bg="#7FDB97" data-hover-text="Menu" />
+				</div>
+			</DropdownMenu.Trigger>
+			<DropdownMenu.Content>
+			  <DropdownMenu.Group>
+				<DropdownMenu.Label>My Account</DropdownMenu.Label>
+				<DropdownMenu.Separator />
+				<DropdownMenu.Item>Profile</DropdownMenu.Item>
+				<DropdownMenu.Item>Billing</DropdownMenu.Item>
+				<DropdownMenu.Item>Team</DropdownMenu.Item>
+				<DropdownMenu.Item>Subscription</DropdownMenu.Item>
+			  </DropdownMenu.Group>
+			</DropdownMenu.Content>
+		  </DropdownMenu.Root>
 	</header>
 
 	<div class="spacer section-1 flex h-max">
@@ -1006,7 +1020,7 @@
 
 				<!-- Logo 2 on the right -->
 				<div class="flex items-center">
-					<img src="burger.svg" alt="Logo 2" class="h-6 lg:h-10" />
+					<img src="burger.svg" alt="Logo 2" class="h-8 lg:h-12" />
 				</div>
 			</header>
 
@@ -1029,7 +1043,7 @@
 						Pelatihan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-roboto text-left text-2xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management. <a href="#1" class="underline text-[#7FDB97]">Booking ↓</a></p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management. <a href="#1" class="underline text-[#7FDB97]">Booking ↗</a></p>
 					</div>
 				</div>
 			</div>
@@ -1137,9 +1151,9 @@
 		</div> -->
 
 		<!-- <p class="font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
-		<div>
+
 			<!-- <div class="vignette-top z-10"></div> -->
-			<div class="z-50 h-screen w-screen">
+			<div class="z-50 flex h-screen w-screen flex-col place-items-center items-center justify-center">
 				<!-- <img class="absolute right-0 z-0 h-screen" src="/bg.png" alt="emak" /> -->
 				<p class="font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Cintailah <span class="text-[#7FDB97]">ploduk-ploduk</span> Indonesia</p>
 				<div class="grid-container z-50 h-full w-full items-center justify-center overflow-hidden whitespace-nowrap py-20 text-center" bind:this={gridContainer}>
@@ -1180,7 +1194,7 @@
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pengelolaan</span> untuk mencapai hasil terbaik secara berkelanjutan.</p>
 						</div>
 					</div> -->
-				</div>
+
 			</div>
 		</div>
 	</div>
