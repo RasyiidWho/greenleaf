@@ -2,7 +2,6 @@
 	import Ox from './../../static/ox.svg';
 	import Layananright from '$lib/layananright.svelte';
 	import Layananleft from '$lib/layananleft.svelte';
-	import dpkCursor from '$lib/dpkCursor';
 	import Layanan from '$lib/layanan.svelte';
 	import { Application } from '@splinetool/runtime';
 	import { onMount } from 'svelte';
@@ -113,8 +112,8 @@
 				toggleActions: 'play play reset reset'
 			}
 		});
-
-		app.load('https://draft.spline.design/F2pFcq0fQpQuVsbM/scene.splinecode').then(() => {
+		// https://prod.spline.design/8HvFYcqeqBDQvuf6/scene.splinecode BLANK
+		app.load('https://draft.spline.design/d00mQgRACrLpx8W0/scene.splinecode').then(() => {
 			// SECTION 2
 			const sec2_tl = gsap.timeline();
 			// SECTION 1
@@ -331,27 +330,53 @@
 				}
 			});
 
-			
-			sec1_tl.fromTo('.stats-text2', {
-				autoAlpha: 0,
-				y: 100,
-				scrollTrigger: {
-					trigger: '.section-1',
-					scrub: true,
-					start: '450%',
-					end: '600%'
+			sec1_tl.fromTo(
+				'.stats-text2',
+				{
+					autoAlpha: 0,
+					y: 100,
+					scrollTrigger: {
+						trigger: '.section-1',
+						scrub: true,
+						start: '450%',
+						end: '600%'
+					}
+				},
+				{
+					autoAlpha: 1,
+					y: 50,
+					scrollTrigger: {
+						trigger: '.section-1',
+						scrub: true,
+						start: '450%',
+						end: '600%'
+					}
 				}
-			},
-			{
-				autoAlpha: 1,
-				y: 50,
-				scrollTrigger: {
-					trigger: '.section-1',
-					scrub: true,
-					start: '450%',
-					end: '600%'
+			);
+
+			sec1_tl.fromTo(
+				'.recycled',
+				{
+					autoAlpha: 0,
+					y: 100,
+					scrollTrigger: {
+						trigger: '.section-1',
+						scrub: true,
+						start: '1100%',
+						end: '1200%'
+					}
+				},
+				{
+					autoAlpha: 1,
+					y: 50,
+					scrollTrigger: {
+						trigger: '.section-1',
+						scrub: true,
+						start: '1100%',
+						end: '1200%'
+					}
 				}
-			});
+			);
 
 			sec1_tl.to('.section-1', {
 				scrollTrigger: {
@@ -375,16 +400,16 @@
 					end: '700%',
 					markers: false,
 					onEnter() {
-						gsap.fromTo('.product-1', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-1', { autoAlpha: 0, display: 'none', y: 250 }, { autoAlpha: 1, display: 'flex', y: 0 });
 					},
 					onEnterBack() {
-						gsap.fromTo('.product-1', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-1', { autoAlpha: 0, display: 'none', y: 250 }, { autoAlpha: 1, display: 'flex', y: 0 });
 					},
 					onLeave() {
-						gsap.to('.product-1', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-1', { autoAlpha: 0, display: 'none', y: 250 });
 					},
 					onLeaveBack() {
-						gsap.to('.product-1', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-1', { autoAlpha: 0, display: 'none', y: 250 });
 					}
 				}
 			});
@@ -396,16 +421,16 @@
 					end: '800%',
 					markers: false,
 					onEnter() {
-						gsap.fromTo('.product-2', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-2', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onEnterBack() {
-						gsap.fromTo('.product-2', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-2', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onLeave() {
-						gsap.to('.product-2', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-2', { autoAlpha: 0, display: 'none',  y: 250 });
 					},
 					onLeaveBack() {
-						gsap.to('.product-2', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-2', { autoAlpha: 0, display: 'none',  y: 250 });
 					}
 				}
 			});
@@ -417,16 +442,16 @@
 					end: '900%',
 					markers: false,
 					onEnter() {
-						gsap.fromTo('.product-3', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-3', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onEnterBack() {
-						gsap.fromTo('.product-3', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-3', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onLeave() {
-						gsap.to('.product-3', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-3', { autoAlpha: 0, display: 'none',  y: 250 });
 					},
 					onLeaveBack() {
-						gsap.to('.product-3', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-3', { autoAlpha: 0, display: 'none',  y: 250 });
 					}
 				}
 			});
@@ -438,16 +463,16 @@
 					end: '1000%',
 					markers: false,
 					onEnter() {
-						gsap.fromTo('.product-4', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-4', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onEnterBack() {
-						gsap.fromTo('.product-4', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-4', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onLeave() {
-						gsap.to('.product-4', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-4', { autoAlpha: 0, display: 'none',  y: 250 });
 					},
 					onLeaveBack() {
-						gsap.to('.product-4', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-4', { autoAlpha: 0, display: 'none',  y: 250 });
 					}
 				}
 			});
@@ -459,16 +484,16 @@
 					end: '1100%',
 					markers: false,
 					onEnter() {
-						gsap.fromTo('.product-5', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-5', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onEnterBack() {
-						gsap.fromTo('.product-5', { autoAlpha: 0, y: 250 }, { autoAlpha: 1, y: 0 });
+						gsap.fromTo('.product-5', { autoAlpha: 0, display: 'none',  y: 250 }, { autoAlpha: 1,  display: 'flex', y: 0 });
 					},
 					onLeave() {
-						gsap.to('.product-5', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-5', { autoAlpha: 0, display: 'none',  y: 250 });
 					},
 					onLeaveBack() {
-						gsap.to('.product-5', { autoAlpha: 0, y: 250 });
+						gsap.to('.product-5', { autoAlpha: 0, display: 'none',  y: 250 });
 					}
 				}
 			});
@@ -533,6 +558,21 @@
 				}
 			});
 
+			sec1_tl.to('.section-1', {
+				scrollTrigger: {
+					trigger: '.section-1',
+					start: '1100%',
+					end: '1200%',
+					markers: false,
+					onEnter() {
+						app.setVariable('0', '1');
+					},
+					onLeaveBack() {
+						app.setVariable('5', '1');
+					}
+				}
+			});
+
 			// sec1_tl.to('.section-1', {
 			// 	scrollTrigger: {
 			// 		trigger: '.section-1',
@@ -557,10 +597,7 @@
 					trigger: '.section-1',
 					pin: true,
 					markers: false,
-					end: '1100%',
-					onUpdate: (x) => {
-						console.log(x.progress * 1100);
-					}
+					end: '1600%'
 				}
 			});
 
@@ -618,6 +655,32 @@
 			// 		end: '300%'
 			// 	}
 			// });
+
+			const items = document.querySelectorAll('.grid-item');
+
+			console.log('gridItem.length: ' + gridItem.length);
+			console.log('items.length: ' + items.length);
+
+			gsap.to('.grid-item', {
+				xPercent: -70 * items.length,
+				scrollTrigger: {
+					trigger: '.section-2',
+					start: '20%',
+					end: '420%',
+					scrub: true
+				}
+			});
+
+			// sec2_tl PINNER + MAX DURATION SETTER
+			sec2_tl.to('.section-2', {
+				// autoAlpha: 1,
+				scrollTrigger: {
+					trigger: '.section-2',
+					pin: true,
+					markers: false,
+					end: '420%'
+				}
+			});
 		});
 
 		// const diumbulkeee = () => {
@@ -640,7 +703,7 @@
 		// });
 		// const dpkCursor = await import('dpk_cursor/dpkCursor.min.js');
 		// import { dpkCursor } from 'dpk_cursor/dpkCursor.min.js';
-		const customCursor = new dpkCursor({ ease: 0.11 });
+
 		let splitIntro = new SplitType('.introx');
 		let splitClient = new SplitType('.clientx');
 
@@ -720,7 +783,7 @@
 				<img width="48px" src="logo.svg" alt="golo" />
 			</div>
 			<div class="pt-12">
-				<img width="36px" class="dpk-hover float-right" data-hover-bg="#8EE996" data-hover-text="Menu" src="burger.svg" alt="golo" />
+				<img width="36px" class="dpk-hover float-right" data-hover-bg="#7FDB97" data-hover-text="Menu" src="burger.svg" alt="golo" />
 			</div>
 		</div>
 	</div> -->
@@ -759,7 +822,7 @@
 
 		<!-- Logo 2 on the right -->
 		<div class="flex items-center">
-			<img src="burger.svg" alt="Logo 2" class="dpk-hover h-8" data-hover-bg="#8EE996" data-hover-text="Menu" />
+			<img src="burger.svg" alt="Logo 2" class="dpk-hover h-10" data-hover-bg="#7FDB97" data-hover-text="Menu" />
 		</div>
 	</header>
 
@@ -781,7 +844,7 @@
 			</div>
 			<div class="sampah absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 pt-64 text-center">
 				<p class="intro-desc font-jost text-4xl font-semibold tracking-tight text-black sm:text-xl md:text-2xl lg:text-xl xl:text-7xl">
-					akan menjadi <span style="color: #8EE996;">asset</span> jika diolah dengan benar.
+					akan menjadi <span style="color: #7FDB97;">asset</span> jika diolah dengan benar.
 				</p>
 			</div>
 		</div>
@@ -857,7 +920,7 @@
 				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
 				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
 				<div class="introx z-50 pt-10">
-					<Button variant="outline" class="dpk-hover mx-1 h-16 w-56 rounded-full px-2 text-3xl" data-hover-bg="#8EE996" data-hover-text="↗">Book</Button>
+					<Button variant="outline" class="dpk-hover mx-1 h-16 w-56 rounded-full px-2 text-3xl" data-hover-bg="#7FDB97" data-hover-text="↗">Book</Button>
 					<Button variant="ghost" class="mx-1 h-16 w-56 rounded-full border-[1px] border-white text-3xl text-white">Showcase</Button>
 					<!-- <Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Hubungi</Button> -->
 				</div>
@@ -886,91 +949,91 @@
 					</div>
 				</div>
 			</div>
-			<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="bur.svg" alt="golo" />
+			<img width="64px" class="slider absolute bottom-0 z-50 pb-3 opacity-0" src="slider.svg" alt="golo" />
 		</div>
 
 		<div class="slide-4 stats absolute hidden h-full flex-col items-center text-center opacity-0">
 			<!-- <img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" /> -->
 			<p class="stats-text font-jost z-0 px-32 pt-36 text-[100px] font-normal leading-none text-black">Solusi sampah dengan bukti statistik yang terus bertambah setiap harinya</p>
-			<div class="stats-grid ">
+			<div class="stats-grid">
 				<div class="mt-20 grid w-fit grid-cols-3 grid-rows-2 place-items-center items-center justify-center gap-5 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 text-center shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<img class="inline w-12" src="/1.svg" alt="golo" />
-						<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#8EE996]">+</span></p>
+						<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#7FDB97]">+</span></p>
 						<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 					</div>
 					<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<img class="inline w-12" src="/2.svg" alt="golo" />
-						<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#8EE996]">+</span></p>
+						<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#7FDB97]">+</span></p>
 						<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 					</div>
 					<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<img class="inline w-12" src="/3.svg" alt="golo" />
-						<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#8EE996]">+</span></p>
+						<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#7FDB97]">+</span></p>
 						<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 					</div>
 					<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<img class="inline w-12" src="/4.svg" alt="golo" />
-						<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#8EE996]">+</span></p>
+						<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#7FDB97]">+</span></p>
 						<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 					</div>
 					<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<img class="inline w-12" src="/4.svg" alt="golo" />
-						<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#8EE996]">+</span></p>
+						<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#7FDB97]">+</span></p>
 						<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 					</div>
 					<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<img class="inline w-12" src="/4.svg" alt="golo" />
-						<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#8EE996]">+</span></p>
+						<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#7FDB97]">+</span></p>
 						<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 					</div>
 				</div>
-				<p class="stats-text2 opacity-0 font-jost z-0 pt-36 text-[100px] font-normal leading-none text-black absolute">Solusi dari kami adalah menerapkan 5 best practice dalam penanganan sampah berupa:</p>
+				<p class="stats-text2 font-jost absolute z-0 pt-36 text-[100px] font-normal leading-none text-black opacity-0">Solusi dari kami adalah menerapkan 5 best practice dalam penanganan sampah berupa..</p>
 			</div>
 		</div>
 
 		<div class="slide-5 absolute -z-10 hidden h-full w-full flex-col items-center text-center opacity-0">
 			<img class="absolute right-0 -z-50 inline w-[64rem] opacity-50" src="/glow1.svg" alt="golo" />
-			<div class="absolute h-screen w-screen">
+			<div class="absolute -z-40 h-screen w-screen">
 				<canvas id="canvas" class="canvas" bind:this={canvas}></canvas>
 			</div>
 
-			<header class="header2 fixed z-0 flex w-full items-center justify-between px-10 py-14 mix-blend-difference" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
+			<header class="header2 fixed z-0 flex w-full items-center justify-between px-6 py-10 mix-blend-difference lg:px-10 lg:py-14" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
 				<!-- Logo 1 on the left -->
 				<div class="flex items-center">
-					<img src="logo.svg" alt="Logo 1" class="h-12" />
+					<img src="logo.svg" alt="Logo 1" class="h-8 lg:h-12" />
 				</div>
 
 				<!-- Logo 2 on the right -->
 				<div class="flex items-center">
-					<img src="burger.svg" alt="Logo 2" class="h-8" />
+					<img src="burger.svg" alt="Logo 2" class="h-6 lg:h-10" />
 				</div>
 			</header>
 
-			<div class="product-1 absolute bottom-0 flex justify-center pb-12 opacity-0">
+			<div class="product-1 absolute bottom-0 hidden justify-center pb-12 opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-3xl font-normal">
 						<img class="mr-3 inline w-12" src="/pendampingan_line.svg" alt="golo" />
 						Pendampingan
 					</p>
-					<div class="rounded-xl bg-white p-4">
+					<div class="rounded-xl bg-white p-4 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<p class="font-roboto text-left text-2xl font-light"><b>Pendampingan</b> pembentukan kelembagaan OSS berbasis resiko dalam penanganan segala jenis sampah.</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="product-2 absolute bottom-0 flex justify-center pb-12 opacity-0">
+			<div class="product-2 absolute bottom-0 hidden justify-center pb-12 opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-10" src="/pelatihan_line.svg" alt="golo" />
 						Pelatihan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-roboto text-left text-2xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management.</p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management. <a href="#1" class="underline text-[#7FDB97]">Booking ↓</a></p>
 					</div>
 				</div>
 			</div>
-			<div class="product-3 absolute bottom-0 flex justify-center pb-12 opacity-0">
+			<div class="product-3 absolute bottom-0 hidden justify-center pb-12 opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-12" src="/standarisasi_line.svg" alt="golo" />
@@ -981,7 +1044,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="product-4 absolute bottom-0 flex justify-center pb-12 opacity-0">
+			<div class="product-4 absolute bottom-0 hidden justify-center pb-12 opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-10" src="/daurulang_line.svg" alt="golo" />
@@ -992,7 +1055,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="product-5 absolute bottom-0 flex justify-center pb-12 opacity-0">
+			<div class="product-5 absolute bottom-0 hidden justify-center pb-12 opacity-0">
 				<div class="grid w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-lg">
 					<p class="font-jost flex items-center pb-5 pl-2 text-left text-4xl font-normal">
 						<img class="mr-3 inline w-12" src="/pengelolaan_line.svg" alt="golo" />
@@ -1003,27 +1066,54 @@
 					</div>
 				</div>
 			</div>
+			<div class="recycled flex h-screen w-screen flex-col place-items-center items-center justify-center">
+				<p class="recycled-text font-jost px-10 text-[100px] font-normal leading-none text-black">Jenis sampah yang kami tampung dari solusi <span class="inline-flex items-center justify-center" style="filter: invert(83%) sepia(4%) saturate(4695%) hue-rotate(81deg) brightness(105%) contrast(71%);"><img class="mr-4 inline w-20" src="/daurulang_line_2.svg" alt="golo" /> Daur Ulang</span></p>
+				<div class="recycled-grid">
+					<div class="mt-20 grid w-fit grid-cols-5 place-items-center items-center justify-center gap-5 rounded-3xl border-[1px] border-white bg-[#ffffff92] p-5 text-center shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+						<div class="w-52 rounded-3xl bg-white p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+							<img class="inline w-12" src="/domestik.svg" alt="golo" />
+							<p class="font-jost pt-5 text-[30px] font-normal">Domestik</p>
+						</div>
+						<div class="w-52 rounded-3xl bg-white p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+							<img class="inline w-12" src="/kertas.svg" alt="golo" />
+							<p class="font-jost pt-5 text-[30px] font-normal">Kertas</p>
+						</div>
+						<div class="w-52 rounded-3xl bg-white p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+							<img class="inline w-12" src="/plastik.svg" alt="golo" />
+							<p class="font-jost pt-5 text-[30px] font-normal">Plastik</p>
+						</div>
+						<div class="w-52 rounded-3xl bg-white p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+							<img class="inline w-12" src="/logam.svg" alt="golo" />
+							<p class="font-jost pt-5 text-[30px] font-normal">Logam</p>
+						</div>
+						<div class="w-52 rounded-3xl bg-white p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+							<img class="inline w-12" src="/kaca.svg" alt="golo" />
+							<p class="font-jost pt-5 text-[30px] font-normal">Kaca</p>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- <img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" /> -->
 			<!-- <p class="stats-text font-jost z-40 px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
 			<div class="stats-grid mt-20 grid w-fit grid-cols-2 grid-rows-2 place-items-center items-center justify-center gap-5 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 text-center shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-md">
 				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/1.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#7FDB97]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/2.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#7FDB97]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/3.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#7FDB97]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 					<img class="inline w-12" src="/4.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#8EE996]">+</span></p>
+					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#7FDB97]">+</span></p>
 					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
 				</div>
 			</div> -->
@@ -1046,22 +1136,21 @@
 			</video>
 		</div> -->
 
-		<p class="font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p>
+		<!-- <p class="font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
 		<div>
 			<!-- <div class="vignette-top z-10"></div> -->
-			<div class="z-50 h-screen w-screen bg-[#F4F9EF]">
-				<img class="absolute right-0 z-0 h-screen" src="/bg.png" alt="emak" />
-				<p class=" font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Dengan <span class="text-[#8EE996]"> 5 layanan unggulan</span> dari kami untuk njenengan</p>
-				<div class="grid-container z-50 h-full w-full overflow-hidden whitespace-nowrap py-20" bind:this={gridContainer}>
-					<!-- {#each Array.from({ length: 5 }) as _, i}
-						<div class="grid-item inline-block" bind:this={gridItem}>
-							<img class="w-56 absolute right-36" src="/pelatihan.svg" alt="golo"/>
-							<div class="p-10 m-4 w-[500px] h-[500px] bg-white rounded-3xl" >
-								{i + 1}
-							</div>
+			<div class="z-50 h-screen w-screen">
+				<!-- <img class="absolute right-0 z-0 h-screen" src="/bg.png" alt="emak" /> -->
+				<p class="font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Cintailah <span class="text-[#7FDB97]">ploduk-ploduk</span> Indonesia</p>
+				<div class="grid-container z-50 h-full w-full items-center justify-center overflow-hidden whitespace-nowrap py-20 text-center" bind:this={gridContainer}>
+					<div class="grid-item mx-2 inline-block w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+						<img class="mr-3 inline aspect-square w-96 rounded-xl object-cover" src="/products/1.png" alt="golo" />
+						<div class="rounded-xl bg-white p-4">
+							<p class="font-roboto whitespace-pre-wrap text-left text-2xl font-light"><b>Vase Bunga</b></p>
+							<p class="font-roboto whitespace-pre-wrap text-left text-2xl font-light">Rp. 20.000,00</p>
 						</div>
-					{/each} -->
-					<!-- <div class="mumbul grid-item z-50 inline-block" role="presentation" on:mouseenter={() => mlebukmetukke.play()} on:mouseleave={() => mlebukmetukke.reverse()}>
+					</div>
+					<!-- <div class="mumbul grid-item z-50 inline-block" role="presentation">
 						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pendampingan.png" alt="golo" />
 						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
 							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pendampingan</span> personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
