@@ -574,23 +574,6 @@
 				}
 			});
 
-			// sec1_tl.to('.section-1', {
-			// 	scrollTrigger: {
-			// 		trigger: '.section-1',
-			// 		start: '1100%',
-			// 		end: '1200%',
-			// 		markers: false,
-			// 		onEnter() {
-			// 			app.setVariable('1', '1');
-			// 		},
-			// 		onLeaveBack() {
-			// 			app.setVariable('0', '1');
-			// 		}
-			// 	}
-			// });
-
-			// mlebukmetukke = gsap.fromTo('.mumbul', { y: 0, paused: true }, { y: -30, paused: true });
-
 			// sec1_tl PINNER + MAX DURATION SETTER
 			sec1_tl.to('.section-1', {
 				// autoAlpha: 1,
@@ -601,62 +584,6 @@
 					end: '1200%'
 				}
 			});
-
-			// sec2_tl.to('.section-2', {
-			// 	scrollTrigger: {
-			// 		trigger: '.section-2',
-			// 		start: '100%',
-			// 		end: '150%',
-			// 		onEnter() {
-			// 			app.setVariable('2', '2');
-			// 		},
-			// 	}
-			// });
-
-			// sec2_tl.to('.section-2', {
-			// 	scrollTrigger: {
-			// 		trigger: '.section-2',
-			// 		start: '150%',
-			// 		end: '200%',
-			// 		onEnter() {
-			// 			app.setVariable('3', '3');
-			// 		},
-			// 	}
-			// });
-
-			// sec2_tl.to('.section-2', {
-			// 	scrollTrigger: {
-			// 		trigger: '.section-2',
-			// 		start: '200%',
-			// 		end: '250%',
-			// 		onEnter() {
-			// 			app.setVariable('4', '4');
-			// 		},
-			// 	}
-			// });
-
-			// sec2_tl.to('.section-2', {
-			// 	scrollTrigger: {
-			// 		trigger: '.section-2',
-			// 		start: '250%',
-			// 		end: '300%',
-			// 		onEnter() {
-			// 			app.setVariable('5', '5');
-			// 		},
-			// 	}
-			// });
-
-			// // sec2_tl PINNER + MAX DURATION SETTER
-			// sec2_tl.to('.section-2', {
-			// 	// autoAlpha: 1,
-			// 	scrollTrigger: {
-			// 		trigger: '.section-2',
-			// 		pin: true,
-			// 		markers: false,
-			// 		end: '300%'
-			// 	}
-			// });
-
 			const items = document.querySelectorAll('.grid-item');
 
 			console.log('gridItem.length: ' + gridItem.length);
@@ -683,6 +610,8 @@
 				}
 			});
 		});
+
+
 
 		// const diumbulkeee = () => {
 		// 	// alert("ahhhhhhh");
@@ -736,6 +665,16 @@
 		gsap.set('.slide-4', { autoAlpha: 0, display: 'none' });
 		gsap.set('.slide-5', { autoAlpha: 0, display: 'none' });
 
+		section2 = () => {
+			alert("gong to sec2")
+			gsap.to(window, {
+            scrollTo: {y: "#section-2", offsetY: 50}, // offsetY to adjust the final scroll position if needed
+            duration: 1, // duration of the scroll animation in seconds
+            ease: "power2.inOut" // easing function for the scroll animation
+        });
+		};
+		
+
 		// gsap.set('.grid-item', {rotate: -2})
 
 		// gsap.set('.mask', {
@@ -759,61 +698,6 @@
 </script>
 
 <div class="font-jost">
-	<!-- <div class="absolute float-right right-0 z-50 pt-5 pr-5">
-		<Menubar.Root>
-			<Menubar.Menu>
-				<Menubar.Trigger>Menu</Menubar.Trigger>
-				<Menubar.Content>
-					<Menubar.Item>
-						New Tab
-						<Menubar.Shortcut>⌘T</Menubar.Shortcut>
-					</Menubar.Item>
-					<Menubar.Item>New Window</Menubar.Item>
-					<Menubar.Separator />
-					<Menubar.Item>Share</Menubar.Item>
-					<Menubar.Separator />
-					<Menubar.Item>Print</Menubar.Item>
-				</Menubar.Content>
-			</Menubar.Menu>
-		</Menubar.Root>
-	</div> -->
-
-	<!-- <div class="header fixed z-50 invert">
-		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
-			<div class="pt-10">
-				<img width="48px" src="logo.svg" alt="golo" />
-			</div>
-			<div class="pt-12">
-				<img width="36px" class="dpk-hover float-right" data-hover-bg="#7FDB97" data-hover-text="Menu" src="burger.svg" alt="golo" />
-			</div>
-		</div>
-	</div> -->
-
-	<!-- <div class="header2 fixed z-30 opacity-0" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
-		<div class="grid grid-cols-2 grid-rows-1 gap-4 pl-10 pr-10">
-			<div class="pt-10">
-				<img width="48px" src="logo.svg" alt="golo" />
-			</div>
-			<div class="pt-12">
-				<img width="36px" class="float-right" src="burger.svg" alt="golo" />
-			</div>
-		</div>
-	</div> -->
-
-	<!-- <div class="header2 fixed z-[1000] opacity-0" style="filter: invert(92%) sepia(9%) saturate(2109%) hue-rotate(61deg) brightness(100%) contrast(83%);">
-		<div class="grid grid-cols-2 grid-rows-1 gap-4">
-			<div>
-				<div class="pl-10 pt-8">
-					<img width="48px" src="logo.svg" alt="golo" />
-				</div>
-			</div>
-			<div>
-				<div class="float-right pr-10 pt-7">
-					<img width="45px" src="burger.svg" alt="" />
-				</div>
-			</div>
-		</div>
-	</div> -->
 
 	<header class="header fixed z-50 w-full items-center justify-between px-10 py-14 invert hidden opacity-0">
 		<!-- Logo 1 on the left -->
@@ -934,8 +818,9 @@
 				<p class="introx font-jost text-[330px] font-extrabold leading-none text-white">SARANA</p>
 				<p class="introx font-jost mx-80 text-5xl font-light text-white">Untuk mengubah segala jenis sampah Anda menjadi sebuah asset.</p>
 				<div class="introx z-50 pt-10">
-					<Button variant="outline" class="dpk-hover mx-1 h-16 w-56 rounded-full px-2 text-3xl" data-hover-bg="#7FDB97" data-hover-text="↗">Book</Button>
-					<Button variant="ghost" class="mx-1 h-16 w-56 rounded-full border-[1px] border-white text-3xl text-white">Showcase</Button>
+					<Button variant="outline" class="dpk-hover mx-2 h-16 rounded-full px-10 text-3xl" data-hover-bg="#7FDB97" data-hover-text="↗">Hubungi</Button>
+					<Button variant="ghost" class="dpk-hover mx-2 h-16 rounded-full border-[1px] px-10 border-white text-3xl text-white" data-hover-bg="#7FDB97" data-hover-text="↗" on:click={section2}>Layanan</Button>
+					<Button variant="ghost" class="dpk-hover mx-2 h-16 rounded-full border-[1px] px-10 border-white text-3xl text-white" data-hover-bg="#7FDB97" data-hover-text="↗">Produk</Button>
 					<!-- <Button variant="ghost" class="mx-1 rounded-full border-white border-[1px] text-white w-56 h-16 text-3xl">Hubungi</Button> -->
 				</div>
 			</div>
@@ -1043,7 +928,7 @@
 						Pelatihan
 					</p>
 					<div class="rounded-xl bg-white p-4">
-						<p class="font-roboto text-left text-2xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management. <a href="#1" class="underline text-[#7FDB97]">Booking ↗</a></p>
+						<p class="font-roboto text-left text-2xl font-light"><b>Pelatihan</b> dan Kerjasama Operasional Tata Kelola Limbah Tuntas Zero Waste Management. <a href="#1" class="dpk-hover underline text-[#7FDB97]" data-hover-bg="#7FDB97" data-hover-text="↗">Booking ↗</a></p>
 					</div>
 				</div>
 			</div>
@@ -1107,55 +992,12 @@
 					</div>
 				</div>
 			</div>
-			<!-- <img class="absolute -z-50 inline w-[64rem]" src="/glow2.svg?v2" alt="golo" /> -->
-			<!-- <p class="stats-text font-jost z-40 px-32 pt-36 text-[100px] font-normal leading-none text-black">Statistik pencapaian yang terus bertambah setiap harinya</p>
-			<div class="stats-grid mt-20 grid w-fit grid-cols-2 grid-rows-2 place-items-center items-center justify-center gap-5 rounded-3xl border-[1px] border-white bg-[#ffffff3d] p-5 text-center shadow-[0px_0px_26px_rgba(0,0,0,0.05)] backdrop-blur-md">
-				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
-					<img class="inline w-12" src="/1.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">5000<span class="text-[#7FDB97]">+</span></p>
-					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
-				</div>
-				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
-					<img class="inline w-12" src="/2.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">230<span class="text-[#7FDB97]">+</span></p>
-					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
-				</div>
-				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
-					<img class="inline w-12" src="/3.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">534<span class="text-[#7FDB97]">+</span></p>
-					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
-				</div>
-				<div class="rounded-3xl bg-white p-20 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
-					<img class="inline w-12" src="/4.svg" alt="golo" />
-					<p class="font-jost pt-10 text-[30px] font-normal">34<span class="text-[#7FDB97]">+</span></p>
-					<p class="font-jost text-[30px] font-light">Total Client Fasyankes</p>
-				</div>
-			</div> -->
 		</div>
 
-		<!-- <div class="relative inline-block pt-10">
-			<button class="cursor-default relative w-[1960px] h-[60px] z-10 bg-transparent border-2 border-white text-white font-bold py-2 px-4 rounded-full overflow-hidden">
-			  <div class="absolute top-0 left-0 w-full h-full">
-				<video class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full" src="intro.mp4" autoplay muted loop></video>
-			  </div>
-			  <span class="relative z-20">HOLA</span>
-			</button>
-		  </div> -->
 	</div>
 	<div class="spacer section-2" bind:this={section2}>
-		<!-- <div class="flex h-full w-full items-center justify-center object-cover text-center">
-			<!== <div class="mask mask-repeat-no-repeat mask-position-center mask-size-44 mask-image-[url('/ox.svg')] showreel flex items-center justify-center text-center w-full h-full object-cover"></div> ==>
-			<video class="product h-full w-full object-cover" bind:this={product} controls>
-				<source src="product.mp4" type="video/mp4" />
-			</video>
-		</div> -->
-
-		<!-- <p class="font-jost px-32 pt-20 text-[120px] font-normal leading-none text-black">Layanan yang Pilah Berkah tawarkan untuk Anda.</p> -->
-
-			<!-- <div class="vignette-top z-10"></div> -->
 			<div class="z-50 flex h-screen w-screen flex-col place-items-center items-center justify-center">
-				<!-- <img class="absolute right-0 z-0 h-screen" src="/bg.png" alt="emak" /> -->
-				<p class="font-jost px-32 pb-8 pt-32 text-[80px] font-normal leading-none text-black">Cintailah <span class="text-[#7FDB97]">ploduk-ploduk</span> Indonesia</p>
+				<p class="font-jost px-32 pb-8 pt-32 text-[100px] font-normal leading-none text-black">Cintailah <span class="text-[#7FDB97]">ploduk-ploduk</span> Indonesia</p>
 				<div class="grid-container z-50 h-full w-full items-center justify-center overflow-hidden whitespace-nowrap py-20 text-center" bind:this={gridContainer}>
 					<div class="grid-item mx-2 inline-block w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
 						<img class="mr-3 inline aspect-square w-96 rounded-xl object-cover" src="/products/1.png" alt="golo" />
@@ -1164,37 +1006,20 @@
 							<p class="font-roboto whitespace-pre-wrap text-left text-2xl font-light">Rp. 20.000,00</p>
 						</div>
 					</div>
-					<!-- <div class="mumbul grid-item z-50 inline-block" role="presentation">
-						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pendampingan.png" alt="golo" />
-						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
-							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pendampingan</span> personal dalam pengelolaan limbah, untuk solusi praktik terbaik.</p>
+					<div class="grid-item mx-2 inline-block w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+						<img class="mr-3 inline aspect-square w-96 rounded-xl object-cover" src="/products/2.jpg" alt="golo" />
+						<div class="rounded-xl bg-white p-4">
+							<p class="font-roboto whitespace-pre-wrap text-left text-2xl font-light"><b>Bank Sampah</b></p>
+							<p class="font-roboto whitespace-pre-wrap text-left text-2xl font-light">Rp. 10.000,00</p>
 						</div>
 					</div>
-					<div class="mumbul grid-item inline-block">
-						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pelatihan.png" alt="golo" />
-						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
-							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pelatihan</span> keterampilan dalam pengelolaan limbah lingkungan.</p>
+					<div class="grid-item mx-2 inline-block w-96 grid-cols-1 grid-rows-1 rounded-3xl border-[1px] border-white bg-[#ffffff] p-5 shadow-[0px_0px_26px_rgba(0,0,0,0.05)]">
+						<img class="mr-3 inline aspect-square w-96 rounded-xl object-cover" src="/products/3.jpg" alt="golo" />
+						<div class="rounded-xl bg-white p-4">
+							<p class="font-roboto whitespace-pre-wrap text-left text-2xl font-light"><b>Udud</b></p>
+							<p class="font-roboto whitespace-pre-wrap text-left text-2xl font-light">Rp. 35.000,00</p>
 						</div>
 					</div>
-					<div class="mumbul grid-item inline-block">
-						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/standarisasi.png" alt="golo" />
-						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
-							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Standarisasi</span> metode baku dalam pengelolaan sampah berkualitas.</p>
-						</div>
-					</div>
-					<div class="mumbul grid-item inline-block">
-						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/daurulang.png" alt="golo" />
-						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
-							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Daur Ulang</span> memanfaatkan sumber daya secara berkelanjutan.</p>
-						</div>
-					</div>
-					<div class="mumbul grid-item inline-block">
-						<img class="absolute bottom-20 mb-36 ml-10 w-96" src="/pengelolaan.png" alt="golo" />
-						<div class="m-4 flex h-[500px] w-[500px] rounded-3xl bg-white p-10">
-							<p class="font-jost whitespace-pre-wrap pt-64 text-[35px] font-light"><span class="font-normal">Pengelolaan</span> untuk mencapai hasil terbaik secara berkelanjutan.</p>
-						</div>
-					</div> -->
-
 			</div>
 		</div>
 	</div>
